@@ -1,4 +1,16 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
   "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["./*"]
+    },
+    "types": ["./types/article", "./types/newt"],
+    "module": "ESNext",
+    "target": "ES2017",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node"
+  }
 }

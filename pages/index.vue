@@ -151,12 +151,13 @@ export default {
 			setTimeout(function() {
 				const overlay = document.getElementById("overlay");
 				const svgTxt = document.getElementById("svgTxt");
-
-				overlay.style.backgroundColor = "rgba(245, 243, 235, 0)";
-				svgTxt.style.display = "none";
-				setTimeout(function() {
-					overlay.style.display = "none";
-				}, 1000);
+				if (overlay && svgTxt) {
+					overlay.style.backgroundColor = "rgba(245, 243, 235, 0)";
+					svgTxt.style.display = "none";
+					setTimeout(function() {
+						overlay.style.display = "none";
+					}, 1000);
+				}
 			}, 2000);
 
 			gsap.registerPlugin(ScrollTrigger);
@@ -233,10 +234,9 @@ export default {
 				animation: tl,
 				trigger: '.wrapper',
 				start: "top top",
-				end: "+=300",
+				end: "+=600",
 				scrub: 1,
 				pin: true,
-				ease: "ease"
 			})
 
 			const openButton = document.querySelector('.open');
@@ -252,16 +252,17 @@ export default {
 					}
 				});
 
-
-				openButton.addEventListener('click', function() {
-					this.classList.toggle('active');
-					if(spNav){
-						spNav.classList.toggle('panelactive');
-					}
-					if(circle){
-						circle.classList.toggle('circleactive');
-					}
-				});
+				if (openButton) {
+					openButton.addEventListener('click', () => {
+						this.classList.toggle('active');
+						if(spNav){
+							spNav.classList.toggle('panelactive');
+						}
+						if(circle){
+							circle.classList.toggle('circleactive');
+						}
+					})
+				}
 
 				let navLinks = document.querySelectorAll('.sp-nav a');
 				for (let i = 0; i < navLinks.length; i++) {

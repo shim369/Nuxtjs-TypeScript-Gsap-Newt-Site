@@ -4,6 +4,21 @@ export default defineNuxtConfig({
   build: {
     transpile: ['gsap']
   },
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'ja'
+      },
+    },
+  },
+  runtimeConfig: {
+    public: {
+      newt: {
+        spaceUid: process.env.NEWT_SPACE_UID,
+        token: process.env.NEWT_CDN_API_TOKEN
+      }
+    }
+  },
   typescript: {
     typeCheck: true
   },

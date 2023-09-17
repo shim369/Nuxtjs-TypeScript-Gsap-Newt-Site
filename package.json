@@ -17,7 +17,7 @@
   "dependencies": {
     "@nuxt/image": "^0.7.1",
     "gsap": "^3.12.2",
-    "newt-client-js": "^3.2.6",
+    "nuxt-microcms-module": "^3.0.2",
     "vue-tsc": "^1.8.8"
   }
 }

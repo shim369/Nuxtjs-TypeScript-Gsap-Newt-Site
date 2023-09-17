@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: ["nuxt-microcms-module"],
+  microCMS: {
+    serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
+    apiKey: process.env.MICROCMS_API_KEY,
+  },
   devtools: { enabled: true },
   build: {
     transpile: ['gsap']
@@ -10,14 +15,6 @@ export default defineNuxtConfig({
         lang: 'ja'
       },
     },
-  },
-  runtimeConfig: {
-    public: {
-      newt: {
-        spaceUid: process.env.NEWT_SPACE_UID,
-        token: process.env.NEWT_CDN_API_TOKEN
-      }
-    }
   },
   typescript: {
     typeCheck: true

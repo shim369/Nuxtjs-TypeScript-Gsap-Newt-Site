@@ -82,45 +82,32 @@
 			<div class="main-left-side2">
 				<div class="main-left-contents">
 					<div class="blog-item-flex">
-							<div class="blog-item-bg">
-								<NuxtLink to="#">
-									<img src="/keybord.jpg" alt="">
-									<span>
-										<time class="date">2023.09.11</time>
-										<h3>texttexttexttexttexttext</h3>
-									</span>
-								</NuxtLink>
-							</div>
-							<div class="blog-item-sm-box">
-								<div class="blog-item-sm">
-									<NuxtLink to="#">
-										<img src="/keybord.jpg" alt="">
-										<span>
-											<time class="date">2023.09.11</time>
-											<h3>texttexttexttexttexttext</h3>
-										</span>
-									</NuxtLink>
-								</div>
-								<div class="blog-item-sm">
-									<NuxtLink to="#">
-										<img src="/keybord.jpg" alt="">
-										<span>
-											<time class="date">2023.09.11</time>
-											<h3>texttexttexttexttexttext</h3>
-										</span>
-									</NuxtLink>
-								</div>
-								<div class="blog-item-sm">
-									<NuxtLink to="#">
-										<img src="/keybord.jpg" alt="">
-										<span>
-											<time class="date">2023.09.11</time>
-											<h3>texttexttexttexttexttext</h3>
-										</span>
-									</NuxtLink>
-								</div>
-						</div>
-					</div>
+            <div class="blog-item-bg" v-if="latestBlog">
+              <NuxtLink :to="`/articles/${latestBlog.id}`">
+                <img :src="latestBlog.eyecatch?.url" :width="latestBlog.eyecatch?.width" :height="latestBlog.eyecatch?.height" alt="" />
+                <span>
+                  <time class="date">
+                    {{ latestBlog ? formatDate(latestBlog.publishedAt ?? latestBlog.createdAt) : 'N/A' }}
+                  </time>
+                  <h3>{{ latestBlog.title }}</h3>
+                </span>
+              </NuxtLink>
+            </div>
+            <div class="blog-item-sm-box">
+              <div class="blog-item-sm" v-for="blog in nextBlogs" :key="blog.id">
+                <NuxtLink :to="`/articles/${blog.id}`">
+                  <img :src="blog.eyecatch?.url" :width="blog.eyecatch?.width" :height="blog.eyecatch?.height" alt="" />
+                  <span>
+                    <time class="date">
+                      {{ latestBlog ? formatDate(latestBlog.publishedAt ?? latestBlog.createdAt) : 'N/A' }}
+                    </time>
+                    <h3>{{ blog.title }}</h3>
+                  </span>
+                </NuxtLink>
+              </div>
+            </div>
+          </div>
+
 					<div>
 						<NuxtLink to="#" class="detail-btn">Show Detail</NuxtLink>
 					</div>
@@ -133,147 +120,202 @@
 	</section>
 </main>
 </template>
-<script>
+<script lang="ts">
+import { computed, Ref, defineComponent, onMounted, ref } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-export default {
-    mounted() {
-        if (process.client) {
-			const paths = document.querySelectorAll('#svgTxt path');
+import { Blog } from '../types/blog';
 
-			paths.forEach(path => {
-				const delay = path.getAttribute('data-delay');
-
-				setTimeout(() => {
-					path.style.animationDelay = `${delay}ms`;
-				}, 0);
-			});
-			setTimeout(function() {
-				const overlay = document.getElementById("overlay");
-				const svgTxt = document.getElementById("svgTxt");
-				if (overlay && svgTxt) {
-					overlay.style.backgroundColor = "rgba(245, 243, 235, 0)";
-					svgTxt.style.display = "none";
-					setTimeout(function() {
-						overlay.style.display = "none";
-					}, 1000);
-				}
-			}, 2000);
-
-			gsap.registerPlugin(ScrollTrigger);
-
-			ScrollTrigger.defaults( {
-				toggleActions:"play none none reverse"
-			})
-
-			gsap.to('.front-img-container', {
-				scale: 120,
-				ease: "ease",
-				scrollTrigger: {
-					trigger: '.move-section',
-					scrub: 1,
-					start: "top top",
-					end: "bottom",
-					pin: true
-				}
-			})
-
-			gsap.to('.svg-txt2' , {
-				autoAlpha: 0,
-				duration: 1.5,
-				scrollTrigger: {
-				start: 1
-				}
-			})
-
-			gsap.to('.txt-bottom', {
-				autoAlpha: 0,
-				letterSpacing: -10,
-				duration: 1,
-				scrollTrigger: {
-					start: 2
-				}
-			})
-
-			gsap.from('.txt-bottom', {
-				letterSpacing: -10,
-				opacity: 0,
-				duration: 1
-			})
-
-			const tl = gsap.timeline();
-
-			tl.from('.left-side div', {
-				y: 150,
-				opacity: 0,
-				stagger: {
-					amount: .2
-				},
-				delay: .25
-			}).to('.wrapper' , {
-				x: -window.innerWidth
-			}).from('.main-right-contents div', {
-				y: 150,
-				opacity: 0,
-				stagger: {
-					amount: .2
-				},
-				delay: .25
-			}).to('.main-section' , {
-				x: -window.innerWidth
-			}).from('.main-left-contents div', {
-				y: 150,
-				opacity: 0,
-				stagger: {
-					amount: .2
-				},
-				delay: .25
-			})
-
-			ScrollTrigger.create( {
-				animation: tl,
-				trigger: '.wrapper',
-				start: "top top",
-				end: "+=600",
-				scrub: 1,
-				pin: true,
-			})
-
-			const openButton = document.querySelector('.open');
-			const pcNavLinks = document.querySelectorAll('.menu a');
-			const spNav = document.querySelector('.sp-nav');
-			const circle = document.querySelector('.circle');
-
-			if(spNav !== null && circle !== null){
-				pcNavLinks.forEach(function(link) {
-					let linkCopy = link.cloneNode(true);
-					if(spNav !== null){
-						spNav.appendChild(linkCopy);
-					}
-				});
-
-				if (openButton) {
-					openButton.addEventListener('click', () => {
-						this.classList.toggle('active');
-						if(spNav){
-							spNav.classList.toggle('panelactive');
-						}
-						if(circle){
-							circle.classList.toggle('circleactive');
-						}
-					})
-				}
-
-				let navLinks = document.querySelectorAll('.sp-nav a');
-				for (let i = 0; i < navLinks.length; i++) {
-					navLinks[i].addEventListener('click', function() {
-						document.querySelector('.open')?.classList.remove('active');
-						spNav?.classList.remove('panelactive');
-						document.querySelector('.circle')?.classList.remove('circleactive');
-					});
-				}
-			}
-        }
-    }
+interface MicroCMSListResponse<T> {
+  contents: T[];
+  totalCount: number;
+  offset: number;
+  limit: number;
 }
+
+export default defineComponent({
+  setup() {
+    const blogData: Ref<MicroCMSListResponse<Blog> | null> = ref(null);
+
+    const fetchData = () => {
+      const { data, execute } = useMicroCMSGetList<Blog>({
+        endpoint: "blogs",
+      });
+
+      execute().then(() => {
+        if (data.value) {
+          blogData.value = data.value;
+          console.log('Fetched data:', blogData.value);
+        } else {
+          console.log('Data is still null');
+        }
+      }).catch((error) => {
+        console.log('API call failed:', error);
+      });
+    };
+
+    const latestBlog = computed(() => {
+      return blogData.value ? blogData.value.contents[0] : null;
+    });
+
+    const nextBlogs = computed(() => {
+      return blogData.value ? blogData.value.contents.slice(1, 4) : [];
+    });
+
+    onMounted(() => {
+    	fetchData();
+      if (process.client) {
+        const paths = document.querySelectorAll<HTMLElement>('#svgTxt path');
+  
+        paths.forEach(path => {
+          const delay = path.getAttribute('data-delay');
+          setTimeout(() => {
+            path.style.animationDelay = `${delay}ms`;
+          }, 0);
+        });
+        setTimeout(function() {
+          const overlay = document.getElementById("overlay");
+          const svgTxt = document.getElementById("svgTxt");
+          if (overlay && svgTxt) {
+            overlay.style.backgroundColor = "rgba(245, 243, 235, 0)";
+            svgTxt.style.display = "none";
+            setTimeout(function() {
+              overlay.style.display = "none";
+            }, 1000);
+          }
+        }, 2000);
+  
+        gsap.registerPlugin(ScrollTrigger);
+  
+        ScrollTrigger.defaults( {
+          toggleActions:"play none none reverse"
+        })
+  
+        gsap.to('.front-img-container', {
+          scale: 120,
+          ease: "ease",
+          scrollTrigger: {
+            trigger: '.move-section',
+            scrub: 1,
+            start: "top top",
+            end: "bottom",
+            pin: true
+          }
+        })
+  
+        gsap.to('.svg-txt2' , {
+          autoAlpha: 0,
+          duration: 1.5,
+          scrollTrigger: {
+          start: 1
+          }
+        })
+  
+        gsap.to('.txt-bottom', {
+          autoAlpha: 0,
+          letterSpacing: -10,
+          duration: 1,
+          scrollTrigger: {
+            start: 2
+          }
+        })
+  
+        gsap.from('.txt-bottom', {
+          letterSpacing: -10,
+          opacity: 0,
+          duration: 1
+        })
+  
+        const tl = gsap.timeline();
+  
+        tl.from('.left-side div', {
+          y: 150,
+          opacity: 0,
+          stagger: {
+            amount: .2
+          },
+          delay: .25
+        }).to('.wrapper' , {
+          x: -window.innerWidth
+        }).from('.main-right-contents div', {
+          y: 150,
+          opacity: 0,
+          stagger: {
+            amount: .2
+          },
+          delay: .25
+        }).to('.main-section' , {
+          x: -window.innerWidth
+        }).from('.main-left-contents div', {
+          y: 150,
+          opacity: 0,
+          stagger: {
+            amount: .2
+          },
+          delay: .25
+        })
+  
+        ScrollTrigger.create( {
+          animation: tl,
+          trigger: '.wrapper',
+          start: "top top",
+          end: "+=600",
+          scrub: 1,
+          pin: true,
+        })
+  
+        const openButton = document.querySelector('.open');
+        const pcNavLinks = document.querySelectorAll('.menu a');
+        const spNav = document.querySelector('.sp-nav');
+        const circle = document.querySelector('.circle');
+  
+        if(spNav !== null && circle !== null){
+          pcNavLinks.forEach(function(link) {
+            let linkCopy = link.cloneNode(true);
+            if(spNav !== null){
+              spNav.appendChild(linkCopy);
+            }
+          });
+  
+          if (openButton) {
+            openButton.addEventListener('click', function() {
+              openButton.classList.toggle('active');
+              if(spNav){
+                spNav.classList.toggle('panelactive');
+              }
+              if(circle){
+                circle.classList.toggle('circleactive');
+              }
+            })
+          }
+  
+          let navLinks = document.querySelectorAll('.sp-nav a');
+          for (let i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener('click', function() {
+              document.querySelector('.open')?.classList.remove('active');
+              spNav?.classList.remove('panelactive');
+              document.querySelector('.circle')?.classList.remove('circleactive');
+            });
+          }
+        }
+      }
+    });
+
+    const formatDate = (dateString: string) => {
+      const date = new Date(dateString);
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+
+      return `${year}.${month}.${day}`;
+    };
+
+    return {
+      formatDate,
+      latestBlog,
+      nextBlogs,
+      data: blogData
+    };
+  },
+});
 </script>

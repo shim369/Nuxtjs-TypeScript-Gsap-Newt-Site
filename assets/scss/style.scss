@@ -458,7 +458,7 @@ section {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	padding: 4rem;
+	padding: 4rem 2rem;
 	position: relative;
     @media screen and (max-width: 800px) {
 		width: 100%;
@@ -482,7 +482,7 @@ section {
 		opacity: 1;
 		z-index: 2;
 		width: 100%;
-		max-width: 800px;
+		max-width: 1000px;
 		.blog-item-flex {
 			width: 100%;
 			display: flex;
@@ -664,7 +664,8 @@ section {
 	justify-content: center;
 	align-items: center;
 	padding: .8rem 0;
-	background-color: var(--main-color);
+	// background-color: var(--main-color);
+	background-color: #ecdabd;
 	a {
 		position: relative;
 		color: var(--sub-color);

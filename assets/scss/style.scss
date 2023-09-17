@@ -111,6 +111,7 @@ body {
 			color: var(--sub-color);
             margin-bottom: 50px;
 			font-size: 1.5rem;
+			text-transform: capitalize;
         }
     }
 }
@@ -671,5 +672,19 @@ section {
 		z-index: 2;
 		font-size: 1.2rem;
 		line-height: 1;
+	}
+}
+
+.under-main {
+	min-height: 100vh;
+	background: var(--white-color);
+	section {
+		display: flex;
+		justify-content: center;
+		color: var(--sub-color);
+		padding: 8rem 2rem;
+		h1 {
+			font-size: 3rem;
+		}
 	}
 }

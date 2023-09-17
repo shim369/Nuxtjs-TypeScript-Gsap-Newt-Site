@@ -263,41 +263,6 @@ export default defineComponent({
           scrub: 1,
           pin: true,
         })
-  
-        const openButton = document.querySelector('.open');
-        const pcNavLinks = document.querySelectorAll('.menu a');
-        const spNav = document.querySelector('.sp-nav');
-        const circle = document.querySelector('.circle');
-  
-        if(spNav !== null && circle !== null){
-          pcNavLinks.forEach(function(link) {
-            let linkCopy = link.cloneNode(true);
-            if(spNav !== null){
-              spNav.appendChild(linkCopy);
-            }
-          });
-  
-          if (openButton) {
-            openButton.addEventListener('click', function() {
-              openButton.classList.toggle('active');
-              if(spNav){
-                spNav.classList.toggle('panelactive');
-              }
-              if(circle){
-                circle.classList.toggle('circleactive');
-              }
-            })
-          }
-  
-          let navLinks = document.querySelectorAll('.sp-nav a');
-          for (let i = 0; i < navLinks.length; i++) {
-            navLinks[i].addEventListener('click', function() {
-              document.querySelector('.open')?.classList.remove('active');
-              spNav?.classList.remove('panelactive');
-              document.querySelector('.circle')?.classList.remove('circleactive');
-            });
-          }
-        }
       }
     });
 

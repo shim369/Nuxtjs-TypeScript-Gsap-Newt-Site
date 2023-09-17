@@ -1,5 +1,6 @@
 <template>
-    <main>
+    <main class="under-main">
+		<section>
 		<template v-if="data">
 			<h1>{{ data.title }}</h1>
 			<img
@@ -18,9 +19,9 @@
 			</div>
 			<div v-html="data.content"></div>
 		</template>
-    </main>
+		</section>
+	</main>
 </template>
-
 <script setup lang="ts">
 import { Blog } from "../../types/blog";
 

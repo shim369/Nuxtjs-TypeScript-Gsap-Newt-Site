@@ -681,6 +681,7 @@ section {
 	background: var(--white-color);
 	section {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		color: var(--sub-color);
 		padding: 8rem 2rem;

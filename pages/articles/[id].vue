@@ -32,7 +32,7 @@ const { data } = await useMicroCMSGetListDetail<Blog>({
   contentId: Array.isArray(params.id) ? params.id[0] : params.id,
 });
 
-const formatDate = (dateString: string) => {
+const formatDate = (dateString: Date) => {
 	const date = new Date(dateString);
 	const year = date.getFullYear();
 	const month = String(date.getMonth() + 1).padStart(2, '0');

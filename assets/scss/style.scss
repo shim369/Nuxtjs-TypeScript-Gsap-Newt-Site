@@ -688,6 +688,12 @@ section {
 		padding: 8rem 2rem;
 		h1 {
 			font-size: 3rem;
+			margin-bottom: 3rem;
+		}
+		a {
+			color: var(--sub-color);
+			margin-bottom: 3rem;
+			display: block;
 		}
 	}
 }

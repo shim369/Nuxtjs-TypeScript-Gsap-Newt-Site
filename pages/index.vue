@@ -83,7 +83,7 @@
           <div class="main-left-contents">
             <div class="blog-item-flex">
               <div class="blog-item-bg" v-if="latestBlog">
-                <NuxtLink :to="`/articles/${latestBlog._id}`">
+                <NuxtLink :to="`/articles/${latestBlog.slug}`">
                   <img :src="latestBlog.coverImage.src" :width="400" :height="300" :alt="`Cover image for ${latestBlog.title}`" />
                   <span>
                     <time class="date">
@@ -95,7 +95,7 @@
               </div>
               <div class="blog-item-sm-box">
                 <div class="blog-item-sm" v-for="article in nextBlogs" :key="article._id">
-                  <NuxtLink :to="`/articles/${article._id}`">
+                  <NuxtLink :to="`/articles/${article.slug}`">
                     <img :src="article.coverImage.src" :width="400" :height="300" :alt="`Cover image for ${article.title}`" />
                     <span>
                       <time class="date">

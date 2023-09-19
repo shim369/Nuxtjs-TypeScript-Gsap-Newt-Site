@@ -2,43 +2,46 @@
     <main class="under-main">
 		<section>
 			<h1>Blog</h1>
-			<div v-for="blog in data?.contents" :key="blog.id">
-				<NuxtLink :to="`articles/${blog.id}`">
-				<img
-				:src="blog.eyecatch?.url"
-				:width="blog.eyecatch?.width"
-				:height="blog.eyecatch?.height"
-				alt=""
-				/>
-				<div>
-					<div>
-					{{ blog.category?.name }}
-					</div>
-					<time class="date">
-						{{ formatDate(blog.publishedAt ?? blog.createdAt) }}
-					</time>
-					<div>
-					{{ blog.title }}
-					</div>
-				</div>
-				</NuxtLink>
-			</div>
+			
+            <div v-for="article in nuxtArticles" :key="article._id" class="blog-item">
+              <NuxtLink :to="`/articles/${article.slug}`" :title="`${article.title}`">
+              <img :src="article.coverImage.src" :alt="`Cover image for ${article.title}`" width="400" height="300" loading="lazy" />
+              <time class="date">
+              <i class="material-icons">schedule</i>
+              {{ formatDate(article.date) }}
+              </time>
+              <h2>{{ article.title }}</h2>
+              </NuxtLink>
+            </div>
 		</section>
 	</main>
 </template>
-<script setup lang="ts">
-import { Blog } from "~/types/blog";
+<script lang="ts" setup>
+import type { Article } from '~/types/article'
+import { useAsyncData, useNuxtApp, useHead } from '#app'
 
-const { data } = await useMicroCMSGetList<Blog>({
-	endpoint: "blogs",
-});
-const formatDate = (dateString: Date) => {
-	const date = new Date(dateString);
-	const year = date.getFullYear();
-	const month = String(date.getMonth() + 1).padStart(2, '0');
-	const day = String(date.getDate()).padStart(2, '0');
+const { data } = await useAsyncData('articles', async () => {
+  const { $newtClient } = useNuxtApp()
+  return await $newtClient.getContents<Article>({
+    appUid: 'blog',
+    modelUid: 'article',
+    query: {
+      select: ['_id', 'title', 'slug', 'body', 'coverImage', 'category', 'date']
+    }
+  })
+})
+const articles = data.value?.items ?? []
 
-	return `${year}.${month}.${day}`;
-};
-formatDate;
+const nuxtArticles = articles.filter((article: Article) => article.category.name === 'Nuxt')
+
+const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(new Date(date))
+}
+
+useHead({
+  title: 'NUXT BASE',
+  meta: [
+    { name: 'description', content: 'NUXT BASE is a website by Nuxt 3' }
+  ]
+})
 </script>

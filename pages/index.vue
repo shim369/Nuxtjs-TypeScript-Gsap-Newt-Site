@@ -83,25 +83,25 @@
           <div class="main-left-contents">
             <div class="blog-item-flex">
               <div class="blog-item-bg" v-if="latestBlog">
-                <NuxtLink :to="`/articles/${latestBlog.id}`">
-                  <img :src="latestBlog.eyecatch?.url" :width="latestBlog.eyecatch?.width" :height="latestBlog.eyecatch?.height" alt="" />
+                <NuxtLink :to="`/articles/${latestBlog._id}`">
+                  <img :src="latestBlog.coverImage.src" :width="400" :height="300" :alt="`Cover image for ${latestBlog.title}`" />
                   <span>
                     <time class="date">
-                      {{ latestBlog ? formatDate(latestBlog.publishedAt ?? latestBlog.createdAt) : 'N/A' }}
+                      {{ formatDate(latestBlog.date) }}
                     </time>
                     <h3>{{ latestBlog.title }}</h3>
                   </span>
                 </NuxtLink>
               </div>
               <div class="blog-item-sm-box">
-                <div class="blog-item-sm" v-for="blog in nextBlogs" :key="blog.id">
-                  <NuxtLink :to="`/articles/${blog.id}`">
-                    <img :src="blog.eyecatch?.url" :width="blog.eyecatch?.width" :height="blog.eyecatch?.height" alt="" />
+                <div class="blog-item-sm" v-for="article in nextBlogs" :key="article._id">
+                  <NuxtLink :to="`/articles/${article._id}`">
+                    <img :src="article.coverImage.src" :width="400" :height="300" :alt="`Cover image for ${article.title}`" />
                     <span>
                       <time class="date">
-                        {{ latestBlog ? formatDate(latestBlog.publishedAt ?? latestBlog.createdAt) : 'N/A' }}
+                        {{ formatDate(article.date) }}
                       </time>
-                      <h3>{{ blog.title }}</h3>
+                      <h3>{{ article.title }}</h3>
                     </span>
                   </NuxtLink>
                 </div>
@@ -120,50 +120,34 @@
     </section>
   </main>
   </template>
-  <script lang="ts">
-  import { computed, Ref, defineComponent, onMounted, ref } from 'vue';
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  import { Blog } from '../types/blog';
+<script lang="ts" setup>
+import { computed, Ref, defineComponent, onMounted, ref } from 'vue';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Article } from '~/types/article';
+import { useAsyncData, useNuxtApp } from '#app';
+
+const { data } = await useAsyncData('articles', async () => {
+  const { $newtClient } = useNuxtApp();
+  return await $newtClient.getContents<Article>({
+    appUid: 'blog',
+    modelUid: 'article',
+    query: {
+      select: ['_id', 'title', 'slug', 'body', 'coverImage', 'category', 'date']
+    }
+  });
+});
+const articles = data.value?.items ?? [];
+
+const latestBlog = computed(() => {
+  return articles ? articles[0] : null;
+});
+
+const nextBlogs = computed(() => {
+  return articles ? articles.slice(1, 4) : [];
+});
   
-  interface MicroCMSListResponse<T> {
-    contents: T[];
-    totalCount: number;
-    offset: number;
-    limit: number;
-  }
-  
-  export default defineComponent({
-    setup() {
-      const blogData: Ref<MicroCMSListResponse<Blog> | null> = ref(null);
-  
-      const fetchData = () => {
-        const { data, execute } = useMicroCMSGetList<Blog>({
-          endpoint: "blogs",
-        });
-  
-        execute().then(() => {
-          if (data.value) {
-            blogData.value = data.value;
-            console.log('Fetched data:', blogData.value);
-          } else {
-            console.log('Data is still null');
-          }
-        }).catch((error) => {
-          console.log('API call failed:', error);
-        });
-      };
-  
-      const latestBlog = computed(() => {
-        return blogData.value ? blogData.value.contents[0] : null;
-      });
-  
-      const nextBlogs = computed(() => {
-        return blogData.value ? blogData.value.contents.slice(1, 4) : [];
-      });
-  
-      onMounted(() => {
-        fetchData();
+onMounted(() => {
         if (process.client) {
           const paths = document.querySelectorAll<HTMLElement>('#svgTxt path');
     
@@ -274,13 +258,4 @@
   
         return `${year}.${month}.${day}`;
       };
-  
-      return {
-        formatDate,
-        latestBlog,
-        nextBlogs,
-        data: blogData
-      };
-    },
-  });
-  </script>
+</script>

@@ -2,7 +2,7 @@
     <main class="under-main">
 		<section>
 			<h1>Blog</h1>
-			
+			    <div class="blog-item-box">
             <div v-for="article in nuxtArticles" :key="article._id" class="blog-item">
               <NuxtLink :to="`/articles/${article.slug}`" :title="`${article.title}`">
               <img :src="article.coverImage.src" :alt="`Cover image for ${article.title}`" width="400" height="300" loading="lazy" />
@@ -13,6 +13,7 @@
               <h2>{{ article.title }}</h2>
               </NuxtLink>
             </div>
+          </div>
 		</section>
 	</main>
 </template>

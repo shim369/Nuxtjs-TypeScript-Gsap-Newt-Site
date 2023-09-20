@@ -690,10 +690,23 @@ section {
 			font-size: 3rem;
 			margin-bottom: 3rem;
 		}
-		a {
-			color: var(--sub-color);
-			margin-bottom: 3rem;
-			display: block;
-		}
+	}
+}
+.blog-item-box {
+	display: flex;
+	.blog-item {
+		width: 30%;
+		margin: 0 1.5% 20px;
+	}
+	a {
+		display: flex;
+		flex-direction: column;
+		color: var(--sub-color);
+		margin-bottom: 3rem;
+	}
+	img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
 	}
 }

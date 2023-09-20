@@ -694,9 +694,16 @@ section {
 }
 .blog-item-box {
 	display: flex;
+    @media screen and (max-width: 800px) {
+		flex-direction: column;
+    }
 	.blog-item {
 		width: 30%;
 		margin: 0 1.5% 20px;
+		@media screen and (max-width: 800px) {
+			width: 100%;
+			margin: 0 0 20px;
+		}
 	}
 	a {
 		display: flex;
@@ -708,5 +715,15 @@ section {
 		width: 100%;
 		height: auto;
 		object-fit: cover;
+	}
+}
+
+time.date {
+	display: flex;
+	align-items: center;
+	margin-top: 1rem;
+	margin-bottom: .5rem;
+	i {
+		font-size: 1rem;
 	}
 }

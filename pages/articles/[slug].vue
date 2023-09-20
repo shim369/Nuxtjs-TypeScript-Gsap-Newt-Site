@@ -4,8 +4,10 @@
             <section class="blog-detail bg-green">
               <div class="container" data-aos="fade-up">
                 <h1>{{ article?.title }}</h1>
-                <time class="date"><i class="material-icons">schedule</i>{{ new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(new Date(article.date))}}</time>
-                <!-- eslint-disable-next-line vue/no-v-html -->
+                <time class="date">
+                <i class="material-icons">schedule</i>
+                {{ formatDate(article.date) }}
+                </time>
                 <div v-html="article?.body"></div>
               </div>
 			      </section>
@@ -38,4 +40,13 @@ useHead({
     { name: 'description', content: 'This is Blog detail page' }
   ]
 })
+
+const formatDate = (dateString: Date) => {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+
+  return `${year}.${month}.${day}`;
+};
 </script>

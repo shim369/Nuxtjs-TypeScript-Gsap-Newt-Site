@@ -717,6 +717,9 @@ section {
 			z-index: 1;
 			position: relative;
 			text-align: center;
+			@media screen and (max-width: 800px) {
+				font-size: 1.5rem;
+			}
 			&::after {
 				border-bottom: solid var(--sub-color);
 				-webkit-transform: translateX(-50%);
@@ -797,6 +800,9 @@ time.date {
 		line-height: 1.6rem;
 		img {
 			margin: 1rem 0;
+			width: 100%;
+			max-height: 500px;
+			object-fit: cover;
 		}
 	}
 }

@@ -1,9 +1,10 @@
 <template>
     <main class="under-main">
 		<section>
+      <div class="bg"></div>
 			<h1>Blog</h1>
 			    <div class="blog-item-box">
-            <div v-for="article in nuxtArticles" :key="article._id" class="blog-item">
+            <div v-for="article in articles" :key="article._id" class="blog-item">
               <NuxtLink :to="`/articles/${article.slug}`" :title="`${article.title}`">
               <img :src="article.coverImage.src" :alt="`Cover image for ${article.title}`" width="400" height="300" loading="lazy" />
               <time class="date">
@@ -33,7 +34,7 @@ const { data } = await useAsyncData('articles', async () => {
 })
 const articles = data.value?.items ?? []
 
-const nuxtArticles = articles.filter((article: Article) => article.category.name === 'Nuxt')
+// const nuxtArticles = articles.filter((article: Article) => article.category.name === 'Nuxt')
 
 
 const formatDate = (dateString: Date) => {

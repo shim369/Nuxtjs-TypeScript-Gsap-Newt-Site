@@ -8,7 +8,7 @@
 		<NuxtLink to="/blog">blog</NuxtLink>
 		<NuxtLink to="/contact">contact</NuxtLink>
 	</nav>
-	<div class="open" @click="toggleNav">
+	<div :class="['open', { 'active': isOpen }]" @click="toggleNav">
 		<span></span>
 		<span></span>
 		<span></span>

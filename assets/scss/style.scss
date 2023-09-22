@@ -264,8 +264,6 @@ section {
     top: 0;
     height: 100vh;
     width: 100vw;
-	// display: grid;
-	// grid-template-columns: 2fr 2fr;
 }
 
 .left-side {
@@ -276,12 +274,11 @@ section {
 	gap: 1rem;
 	opacity: 1;
 	position: relative;
-	z-index: 2;
+	z-index: -2;
 	width: 50%;
 	height: 100vh;
     @media screen and (max-width: 800px) {
 		width: 100%;
-		// justify-content: flex-end;
     }
 }
 

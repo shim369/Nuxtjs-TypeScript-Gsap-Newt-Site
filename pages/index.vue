@@ -167,7 +167,7 @@ onMounted(() => {
               svgTxt.style.display = "none";
               setTimeout(function() {
                 overlay.style.display = "none";
-              }, 1000);
+              }, 2000);
             }
           }, 2000);
     
@@ -218,9 +218,9 @@ onMounted(() => {
             y: 150,
             opacity: 0,
             stagger: {
-              amount: .2
+              amount: .5
             },
-            delay: .25
+            delay: 1.5
           })
           // .to('.wrapper' , {
           //   x: -window.innerWidth
@@ -229,9 +229,9 @@ onMounted(() => {
             y: 150,
             opacity: 0,
             stagger: {
-              amount: .2
+              amount: .5
             },
-            delay: .25
+            delay: 1
           })
           // .to('.main-section' , {
           //   x: -window.innerWidth
@@ -240,19 +240,18 @@ onMounted(() => {
             y: 150,
             opacity: 0,
             stagger: {
-              amount: .2
+              amount: .5
             },
-            delay: .25
+            delay: 1
           })
     
           ScrollTrigger.create( {
             animation: tl,
             trigger: '.wrapper',
             start: "top top",
-            end: "+=10",
+            end: "+=100",
             scrub: 1,
             pin: true,
-            pinSpacing: "none"
           })
         }
       });

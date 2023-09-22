@@ -23,7 +23,7 @@
         <img src="/green.jpg" alt="" class="nature">
       </div>
       <div class="front-img-container">
-        <img src="/mask.png" alt="" class="img">
+        <img src="/mask.png" alt="" class="mask">
       </div>
   
       <div class="front-text-container">
@@ -221,18 +221,22 @@ onMounted(() => {
               amount: .2
             },
             delay: .25
-          }).to('.wrapper' , {
-            x: -window.innerWidth
-          }).from('.main-right-contents div', {
+          })
+          // .to('.wrapper' , {
+          //   x: -window.innerWidth
+          // })
+          .from('.main-right-contents div', {
             y: 150,
             opacity: 0,
             stagger: {
               amount: .2
             },
             delay: .25
-          }).to('.main-section' , {
-            x: -window.innerWidth
-          }).from('.main-left-contents div', {
+          })
+          // .to('.main-section' , {
+          //   x: -window.innerWidth
+          // })
+          .from('.main-left-contents div', {
             y: 150,
             opacity: 0,
             stagger: {
@@ -245,9 +249,10 @@ onMounted(() => {
             animation: tl,
             trigger: '.wrapper',
             start: "top top",
-            end: "+=600",
+            end: "+=10",
             scrub: 1,
             pin: true,
+            pinSpacing: "none"
           })
         }
       });

@@ -268,6 +268,41 @@ section {
     width: 100vw;
 }
 
+.bg-p {
+    min-height: 50vh;
+    padding: 4rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(/pc.jpg);
+	position: relative;
+	// &::before {
+	// 	width: 100%;
+	// 	content: "";
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	right: 0;
+	// 	bottom: 0;
+	// 	opacity: .9;
+	// 	background: #ccc;
+	// 	z-index: 1;
+	// }
+	p {
+		color: var(--white-color);
+		z-index: 2;
+		font-size: 4rem;
+		font-family: 'Nanum Myeongjo', serif;
+		@media screen and (max-width: 800px) {
+			font-size: 2rem;
+		}
+	}
+}
+
 .left-side {
 	display: flex;
 	flex-direction: column;

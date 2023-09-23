@@ -77,6 +77,9 @@
         </div>
       </div>
     </section>
+    <section class="bg-p">
+      <p>Web Development</p>
+    </section>
     <section class="main-section">
       <div class="main-inner">
         <div class="main-left-side2">

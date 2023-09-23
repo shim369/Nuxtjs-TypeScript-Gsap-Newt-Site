@@ -6,7 +6,7 @@
 		<NuxtLink to="/about">about</NuxtLink>
 		<NuxtLink to="/skills">skills</NuxtLink>
 		<NuxtLink to="/blog">blog</NuxtLink>
-		<NuxtLink to="/contact">contact</NuxtLink>
+		<NuxtLink to="#contact">contact</NuxtLink>
 	</nav>
 	<div :class="['open', { 'active': isOpen }]" @click="toggleNav">
 		<span></span>

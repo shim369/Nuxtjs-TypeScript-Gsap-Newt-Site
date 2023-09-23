@@ -33,6 +33,7 @@
 	margin: 0;
 	box-sizing: border-box;
 	text-decoration: none;
+	word-break: break-all;
 }
 
 html {
@@ -152,24 +153,25 @@ body {
         }
     }
     &.active {
-        background: var(--main-color);
+        // background: var(--main-color);
         z-index: 9999 !important;
         span {
-            background: var(--sub-color);
+            // background: var(--sub-color);
+			transition: all .4s;
             &:nth-of-type(1) {
                 top: 18px;
-                left: 18px;
+                left: 14px;
                 transform: translateY(6px) rotate(-45deg);
-                width: 33%;
+                width: 45%;
             }
             &:nth-of-type(2) {
                 opacity: 0;
             }
             &:nth-of-type(3){
                 top: 30px;
-                left: 18px;
+                left: 14px;
                 transform: translateY(-6px) rotate(45deg);
-                width: 33%;
+                width: 45%;
             }
         }
     }
@@ -185,7 +187,7 @@ body {
     transform: scale(0);
     bottom: -50px;
     left: calc(50% - 50px);
-    transition: all .6s;
+    transition: all .2s;
     &.circleactive {
         transform: scale(50);
     }
@@ -275,17 +277,18 @@ section {
 	opacity: 1;
 	position: relative;
 	z-index: -2;
-	width: 50%;
+	width: 70%;
 	height: 100vh;
     @media screen and (max-width: 800px) {
 		width: 100%;
+		padding: 2rem 4%;
     }
 }
 
 .detail-btn {
 	background-color: var(--sub-color);
 	color: var(--white-color);
-	padding: 0.5rem 1rem;
+	padding: 0.8rem 1rem;
 	&:hover {
 		opacity: .8;
 	}
@@ -294,6 +297,7 @@ section {
 .text-title {
 	font-family: 'Nanum Myeongjo', serif;
 	margin-bottom: 1.5rem;
+	text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
 }
 
 .text-container {
@@ -301,8 +305,8 @@ section {
 	p {
 		padding-bottom: 1rem;
 		line-height: 1.4;
-		opacity: .8;
 		margin-bottom: 1.5rem;
+		text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
 	}
 }
 
@@ -356,9 +360,12 @@ section {
 }
 
 .svg-txt {
-	padding: 1rem 2rem 1.5rem;
+	padding: 0 2rem;
 	position: relative;
 	z-index: 1001;
+    @media screen and (max-width: 800px) {
+		padding: 0 4%;
+    }
 	path {
 		fill-opacity: 0;
 		fill: none;
@@ -370,10 +377,14 @@ section {
 }
 
 .svg-txt2 {
-	padding: 1rem 2rem 1.5rem;
+	padding: 0 2rem;
 	position: relative;
 	z-index: 998;
 	max-width: 100%;
+    @media screen and (max-width: 800px) {
+		top: -5rem;
+		padding: 0 4%;
+    }
 	path {
 		fill: var(--sub-color);
 		stroke: var(--sub-color);
@@ -432,6 +443,7 @@ section {
 	position: relative;
     @media screen and (max-width: 800px) {
 		display: none;
+		padding: 2rem 4%;
     }
 	&::before {
 		width: 100%;
@@ -462,6 +474,7 @@ section {
 	position: relative;
     @media screen and (max-width: 800px) {
 		width: 100%;
+		padding: 4rem 4%;
     }
 	&::before {
 		width: 100%;
@@ -590,6 +603,7 @@ section {
 	position: relative;
     @media screen and (max-width: 800px) {
 		width: 100%;
+		padding: 4rem 4%;
     }
 	&::before {
 		width: 100%;
@@ -638,6 +652,7 @@ section {
 	position: relative;
     @media screen and (max-width: 800px) {
 		display: none;
+		padding: 2rem 4%;
     }
 	&::before {
 		width: 100%;
@@ -663,7 +678,6 @@ section {
 	justify-content: center;
 	align-items: center;
 	padding: .8rem 0;
-	// background-color: var(--main-color);
 	background-color: #ecdabd;
 	a {
 		position: relative;
@@ -681,12 +695,14 @@ section {
 	section {
 		display: flex;
 		flex-direction: column;
-		// justify-content: center;
 		align-items: center;
 		color: var(--sub-color);
 		padding: 8rem 2rem;
 		position: relative;
 		min-height: 100vh;
+		@media screen and (max-width: 800px) {
+			padding: 8rem 4%;
+		}
 		.bg {
 			content: "";
 			min-width: 1343px;

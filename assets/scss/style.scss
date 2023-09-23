@@ -289,6 +289,7 @@ section {
 	background-color: var(--sub-color);
 	color: var(--white-color);
 	padding: 0.8rem 1rem;
+	transition: all .2s;
 	&:hover {
 		opacity: .8;
 	}
@@ -297,7 +298,9 @@ section {
 .text-title {
 	font-family: 'Nanum Myeongjo', serif;
 	margin-bottom: 1.5rem;
-	text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
+	&.green {
+		text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
+	}
 }
 
 .text-container {
@@ -306,7 +309,9 @@ section {
 		padding-bottom: 1rem;
 		line-height: 1.4;
 		margin-bottom: 1.5rem;
-		text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
+		&.green {
+			text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
+		}
 	}
 }
 
@@ -471,6 +476,9 @@ section {
 	flex-direction: column;
 	padding: 4rem 2rem;
 	position: relative;
+	background-image: url(/pc3.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
     @media screen and (max-width: 1000px) {
 		width: 100%;
     }
@@ -485,6 +493,7 @@ section {
 		left: 0;
 		right: 0;
 		bottom: 0;
+		opacity: .9;
 		background: var(--white-color);
 		z-index: 1;
 	}
@@ -511,6 +520,7 @@ section {
 				display: flex;
 				justify-content: flex-start;
 				padding: 10px;
+				transition: all .2s;
 				&:hover {
 					background-color: rgba(var(--bg-color-r), var(--bg-color-g), var(--bg-color-b), 0.4);			
 				}	
@@ -602,6 +612,9 @@ section {
 	flex-direction: column;
 	padding: 4rem;
 	position: relative;
+	background-image: url(/pc2.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
     @media screen and (max-width: 1000px) {
 		width: 100%;
 		padding: 2rem;
@@ -617,6 +630,7 @@ section {
 		left: 0;
 		right: 0;
 		bottom: 0;
+		opacity: .9;
 		background: var(--white-color);
 		z-index: 1;
 	}

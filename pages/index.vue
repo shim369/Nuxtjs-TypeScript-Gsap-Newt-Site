@@ -49,11 +49,11 @@
   
       <div class="back-text-container">
         <div class="left-side">
-          <div class="text-title">
+          <div class="text-title green">
             <h2 class="bg">Elevate Your Web Development<br>The Advantages of Nuxt 3</h2>
           </div>
           <div class="text-container">
-            <p>Nuxt 3 is based on Vue 3, offering high performance and efficient development support. It features automatic routing, SSR (Server-Side Rendering), and SSG (Static Site Generation), making customization and extension easy. A large community and ecosystem add to its appeal.</p>
+            <p class="green">Nuxt 3 is based on Vue 3, offering high performance and efficient development support. It features automatic routing, SSR (Server-Side Rendering), and SSG (Static Site Generation), making customization and extension easy. A large community and ecosystem add to its appeal.</p>
             <NuxtLink to="/about" class="detail-btn">Show Detail</NuxtLink>
           </div>
         </div>

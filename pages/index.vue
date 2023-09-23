@@ -211,7 +211,7 @@ onMounted(() => {
             opacity: 0,
             duration: 1
           })
-    
+
           const tl = gsap.timeline();
     
           tl.from('.left-side div', {
@@ -222,34 +222,12 @@ onMounted(() => {
             },
             delay: 1.5
           })
-          // .to('.wrapper' , {
-          //   x: -window.innerWidth
-          // })
-          .from('.main-right-contents div', {
-            y: 150,
-            opacity: 0,
-            stagger: {
-              amount: .5
-            },
-            delay: 1
-          })
-          // .to('.main-section' , {
-          //   x: -window.innerWidth
-          // })
-          .from('.main-left-contents div', {
-            y: 150,
-            opacity: 0,
-            stagger: {
-              amount: .5
-            },
-            delay: 1
-          })
     
           ScrollTrigger.create( {
             animation: tl,
             trigger: '.wrapper',
             start: "top top",
-            end: "+=100",
+            end: "+=10",
             scrub: 1,
             pin: true,
           })

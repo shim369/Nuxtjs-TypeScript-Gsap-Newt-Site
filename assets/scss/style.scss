@@ -444,9 +444,6 @@ section {
     @media screen and (max-width: 1000px) {
 		display: none;
     }
-    @media screen and (max-width: 800px) {
-		padding: 2rem 4%;
-    }
 	&::before {
 		width: 100%;
 		content: "";
@@ -607,6 +604,7 @@ section {
 	position: relative;
     @media screen and (max-width: 1000px) {
 		width: 100%;
+		padding: 2rem;
     }
     @media screen and (max-width: 800px) {
 		padding: 4rem 4%;
@@ -658,9 +656,6 @@ section {
 	position: relative;
     @media screen and (max-width: 1000px) {
 		display: none;
-    }
-    @media screen and (max-width: 800px) {
-		padding: 2rem 4%;
     }
 	&::before {
 		width: 100%;

@@ -153,10 +153,8 @@ body {
         }
     }
     &.active {
-        // background: var(--main-color);
         z-index: 9999 !important;
         span {
-            // background: var(--sub-color);
 			transition: all .4s;
             &:nth-of-type(1) {
                 top: 18px;
@@ -279,24 +277,11 @@ section {
     background-attachment: fixed;
     background-size: cover;
     background-image: url(/pc.jpg);
-	position: relative;
-	// &::before {
-	// 	width: 100%;
-	// 	content: "";
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// 	right: 0;
-	// 	bottom: 0;
-	// 	opacity: .9;
-	// 	background: #ccc;
-	// 	z-index: 1;
-	// }
 	p {
 		color: var(--white-color);
-		z-index: 2;
 		font-size: 4rem;
 		font-family: 'Nanum Myeongjo', serif;
+		text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
 		@media screen and (max-width: 800px) {
 			font-size: 2rem;
 		}
@@ -898,7 +883,7 @@ time.date {
 	input,textarea {
 		color: var(--sub-color);
 		background: var(--main-color);
-		font-size: 15px;
+		font-size: 1rem;
 		transition: all .3s;
 		padding: 13px;
 		width: 100%;
@@ -915,19 +900,20 @@ time.date {
 		}
 	}
 	.submit-btn {
-		color: var(--sub-color);
+		color: var(--white-color);
 		border: 1px solid var(--sub-color);
+		background: var(--sub-color);
 		padding: 1rem 1.5rem;
 		margin-top: 1rem;
 		display: inline-block;
 		transition: all .5s ease;
-		background: transparent;
 		cursor: pointer;
 		font-family: 'Nanum Myeongjo', serif;
+		font-size: 1rem;
 		&:hover {
-			color: var(--white-color);
+			color: var(--sub-color);
 			border: 1px solid var(--sub-color);
-			background: var(--sub-color);
+			background: transparent;
 		}
 	}
 }

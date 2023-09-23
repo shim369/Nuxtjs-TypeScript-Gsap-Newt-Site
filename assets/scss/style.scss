@@ -276,7 +276,7 @@ section {
 	gap: 1rem;
 	opacity: 1;
 	position: relative;
-	z-index: -2;
+	z-index: 0;
 	width: 70%;
 	height: 100vh;
     @media screen and (max-width: 800px) {
@@ -441,8 +441,10 @@ section {
 	background-repeat: no-repeat;
 	background-position: center;
 	position: relative;
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1000px) {
 		display: none;
+    }
+    @media screen and (max-width: 800px) {
 		padding: 2rem 4%;
     }
 	&::before {
@@ -472,8 +474,10 @@ section {
 	flex-direction: column;
 	padding: 4rem 2rem;
 	position: relative;
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1000px) {
 		width: 100%;
+    }
+    @media screen and (max-width: 800px) {
 		padding: 4rem 4%;
     }
 	&::before {
@@ -601,8 +605,10 @@ section {
 	flex-direction: column;
 	padding: 4rem;
 	position: relative;
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1000px) {
 		width: 100%;
+    }
+    @media screen and (max-width: 800px) {
 		padding: 4rem 4%;
     }
 	&::before {
@@ -650,8 +656,10 @@ section {
 	background-repeat: no-repeat;
 	background-position: center;
 	position: relative;
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1000px) {
 		display: none;
+    }
+    @media screen and (max-width: 800px) {
 		padding: 2rem 4%;
     }
 	&::before {

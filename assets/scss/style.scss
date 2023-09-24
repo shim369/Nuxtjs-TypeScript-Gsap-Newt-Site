@@ -599,8 +599,8 @@ section {
 					max-height: 100px;
 					object-fit: cover;
 					@media screen and (max-width: 800px) {
-						max-width: 50px;
-						max-height: 50px;
+						max-width: 80px;
+						max-height: 80px;
 					}
 				}
 				.date {
@@ -890,7 +890,7 @@ time.date {
 	}
 	input,textarea {
 		color: var(--sub-color);
-		background: var(--main-color);
+		background-color: rgba(var(--bg-color-r), var(--bg-color-g), var(--bg-color-b), 0.4);
 		font-size: 1rem;
 		transition: all .3s;
 		padding: .8rem;
@@ -900,7 +900,7 @@ time.date {
 		font-weight: 400;
 		font-family: 'Nanum Myeongjo', serif;
 		&::placeholder {
-			color: var(--white-color);
+			color: #be9047;
 			font-family: 'Nanum Myeongjo', serif;
 		}
 		&:focus {

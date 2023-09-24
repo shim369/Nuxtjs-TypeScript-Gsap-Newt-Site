@@ -529,7 +529,7 @@ section {
 		opacity: 1;
 		z-index: 2;
 		width: 100%;
-		max-width: 1000px;
+		max-width: 1200px;
 		.blog-item-flex {
 			width: 100%;
 			display: flex;
@@ -801,13 +801,13 @@ section {
 		h2 {
 			z-index: 1;
 			margin-bottom: 2rem;
-			max-width: 1000px;
+			max-width: 1200px;
 		}
 		p {
 			font-size: 1.3rem;
 			z-index: 1;
 			line-height: 1.6rem;
-			max-width: 1000px;
+			max-width: 1200px;
 			font-family: 'Lato', sans-serif;
 		}
 		a {
@@ -958,7 +958,7 @@ time.date {
 		margin-bottom: 1rem;
 		font-size: 1.3rem;
 		line-height: 1.6rem;
-		max-width: 1000px;
+		max-width: 1200px;
 		font-family: "Lato",sans-serif;
 	}
 
@@ -966,7 +966,7 @@ time.date {
 		margin: 3rem 0 5rem;
 		z-index: 2;
 		width: 100%;
-		max-width: 1000px;
+		max-width: 1200px;
 		border: none;
 		border-top: 0.3px solid var(--sub-color);
 	}
@@ -987,7 +987,7 @@ time.date {
 	z-index: 2;
 	padding: 4rem;
 	background: var(--white-color);
-	max-width: 1000px;
+	max-width: 1200px;
 }
 
 .skills-box {
@@ -995,12 +995,13 @@ time.date {
 	z-index: 2;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-between;
+	max-width: 1200px;
 	@media screen and (max-width: 800px) {
 		flex-direction: column;
 	}
 	.skills-item {
-		width: 46%;
+		width: 48%;
 		background: var(--white-color);
 		margin-bottom: 2rem;
 		padding: 2rem;
@@ -1008,6 +1009,7 @@ time.date {
 			width: 100%;
 		}
 		h2 {
+			font-size: 1.3rem;
 			margin-bottom: 1rem;
 			border-bottom: 1px solid var(--sub-color);
 		}
@@ -1036,6 +1038,7 @@ time.date {
 	padding: 1rem 1.5rem;
     text-decoration: none;
 	text-align: center;
+	margin-top: 2rem;
 	margin-bottom: 0 !important;
 	transition: all .5s ease;
 	&:hover {

@@ -543,10 +543,6 @@ section {
 				display: flex;
 				justify-content: flex-start;
 				padding: 10px;
-				transition: all .2s;
-				&:hover {
-					background-color: rgba(var(--bg-color-r), var(--bg-color-g), var(--bg-color-b), 0.4);			
-				}	
 			}
 			.blog-item-bg {
 				width: 58%;
@@ -559,6 +555,7 @@ section {
 				a {
 					flex-direction: column;
 					background: var(--white-color);
+					transition: all .5s ease;
 					&:hover {
 						background: transparent;
 					}
@@ -598,6 +595,7 @@ section {
 				}
 				a {
 					background: var(--white-color);
+					transition: all .5s ease;
 					&:hover {
 						background: transparent;
 					}

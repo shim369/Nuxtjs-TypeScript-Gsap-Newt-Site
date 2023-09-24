@@ -25,7 +25,7 @@
         </section>
 	</main>
 </template>
-<script>
+<script setup>
 useHead({
     title: 'Skills | Nuxt Base',
     meta: [

@@ -27,7 +27,7 @@
         </section>
 	</main>
 </template>
-<script>
+<script setup>
 useHead({
     title: 'About | Nuxt Base',
     meta: [

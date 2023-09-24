@@ -558,6 +558,10 @@ section {
 				}
 				a {
 					flex-direction: column;
+					background: var(--white-color);
+					&:hover {
+						background: transparent;
+					}
 				}
 				img {
 					width: 100%;
@@ -591,6 +595,12 @@ section {
 				margin-bottom: 1.5rem;
 				@media screen and (max-width: 800px) {
 					margin-bottom: .8rem;
+				}
+				a {
+					background: var(--white-color);
+					&:hover {
+						background: transparent;
+					}
 				}
 				img {
 					max-width: 100px;

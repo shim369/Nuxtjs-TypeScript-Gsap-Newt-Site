@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Lato:wght@300;900&family=Nanum+Myeongjo:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;900&family=Nanum+Myeongjo:wght@700&display=swap');
 
 .material-icons {
     font-family: 'Material Icons';
@@ -45,7 +45,6 @@ body {
 	color: var(--white-color);
 	overflow-x: hidden;
 	background-color: var(--main-color);
-	// font-family: 'Anton', sans-serif;
 	font-family: 'Nanum Myeongjo', serif;
 	position: relative;
 	z-index: -10;
@@ -57,6 +56,7 @@ body {
 	font-family: 'Nanum Myeongjo', serif;
 	color: var(--sub-color);
 	cursor: pointer;
+	transition: all .4s;
 }
 
 .navbar {
@@ -84,6 +84,7 @@ body {
 		text-decoration: none;
 		padding: 0.5rem 1.5rem;
 		border-radius: 20px;
+		transition: all .4s;
 		&:hover {
 			color: var(--white-color);
 			background: var(--sub-color);
@@ -976,8 +977,41 @@ time.date {
 		margin-right: .3rem;
 		padding: 0 .5rem;
 	}
-	p {
+	.read-text {
 		margin-bottom: 2rem;
+	}
+}
+
+.reason-box {
+	position: relative; 
+	z-index: 2;
+	padding: 4rem;
+	background: var(--white-color);
+	max-width: 1000px;
+}
+
+.skills-box {
+	position: relative; 
+	z-index: 2;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	@media screen and (max-width: 800px) {
+		flex-direction: column;
+	}
+	.skills-item {
+		width: 46%;
+		background: var(--white-color);
+		margin-bottom: 2rem;
+		padding: 2rem;
+		@media screen and (max-width: 800px) {
+			width: 100%;
+		}
+		h2 {
+			margin-bottom: 1rem;
+			border-bottom: 1px solid var(--sub-color);
+		}
+
 	}
 }
 

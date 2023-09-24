@@ -297,7 +297,7 @@ section {
 	opacity: 1;
 	position: relative;
 	z-index: 0;
-	width: 70%;
+	width: 55%;
 	height: 100vh;
     @media screen and (max-width: 800px) {
 		width: 100%;
@@ -308,10 +308,13 @@ section {
 .detail-btn {
 	background-color: var(--sub-color);
 	color: var(--white-color);
+	border: 1px solid var(--sub-color);
 	padding: 0.8rem 1rem;
 	transition: all .2s;
 	&:hover {
-		opacity: .8;
+		color: var(--sub-color);
+		border: 1px solid var(--sub-color);
+		background: transparent;
 	}
 }
 
@@ -765,7 +768,7 @@ section {
 		}
 		h1 {
 			font-size: 3rem;
-			margin-bottom: 3rem;
+			margin-bottom: 5rem;
 			text-transform: capitalize;
 			z-index: 1;
 			position: relative;
@@ -784,6 +787,10 @@ section {
 				border-bottom-width: 2px;
 				width: 80px;
 			}
+		}
+		h2 {
+			z-index: 1;
+			margin-bottom: 2rem;
 		}
 		p {
 			font-size: 1.3rem;
@@ -805,6 +812,7 @@ section {
 	position: relative;
 	z-index: 3;
 	flex-wrap: wrap;
+	margin-top: 3rem;
     @media screen and (max-width: 800px) {
 		flex-direction: column;
     }
@@ -876,7 +884,7 @@ time.date {
 
 .form-box {
 	max-width: 600px;
-    margin: 40px auto 60px;
+    margin: 2.5rem auto 3.5rem;
 	.form-item {
 		width: 100%;
 	}
@@ -885,7 +893,7 @@ time.date {
 		background: var(--main-color);
 		font-size: 1rem;
 		transition: all .3s;
-		padding: 13px;
+		padding: .8rem;
 		width: 100%;
 		border: none;
 		margin-bottom: 20px;
@@ -898,6 +906,9 @@ time.date {
 		&:focus {
 			outline: none;
 		}
+	}
+	textarea {
+		min-height: 150px;
 	}
 	.submit-btn {
 		color: var(--white-color);
@@ -915,5 +926,70 @@ time.date {
 			border: 1px solid var(--sub-color);
 			background: transparent;
 		}
+	}
+}
+
+.about,.skills {
+	ul {
+		list-style-type: none;
+		z-index: 2;
+		margin-bottom: 2rem;
+	}
+
+	li {
+		margin-bottom: 1rem;
+		font-size: 1.3rem;
+		line-height: 1.6rem;
+		max-width: 1000px;
+		font-family: "Lato",sans-serif;
+	}
+
+	hr {
+		margin: 3rem 0 5rem;
+		z-index: 2;
+		width: 100%;
+		max-width: 1000px;
+		border: none;
+		border-top: 0.3px solid var(--sub-color);
+	}
+
+	.highlight {
+		color: var(--sub-color);
+		background: var(--accent-color);
+		margin-right: .3rem;
+		padding: 0 .5rem;
+	}
+	p {
+		margin-bottom: 2rem;
+	}
+}
+
+.cta-section {
+    padding: 3rem;
+    background-color: var(--white-color);
+    margin-top: 5rem;
+	position: relative;
+	z-index: 2;
+	max-width: 800px;
+	h2 {
+		text-align: center;
+	}
+}
+
+.cta-button {
+    display: inline-block;
+	padding: 1rem 1.5rem;
+	color: var(--white-color) !important;
+	border: 1px solid var(--sub-color);
+	background: var(--sub-color);
+	padding: 1rem 1.5rem;
+    text-decoration: none;
+	text-align: center;
+	margin-bottom: 0 !important;
+	transition: all .5s ease;
+	&:hover {
+		color: var(--sub-color) !important;
+		border: 1px solid var(--sub-color);
+		background: transparent;
 	}
 }

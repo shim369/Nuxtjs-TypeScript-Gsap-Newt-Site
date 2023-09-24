@@ -3,7 +3,7 @@
 		<section>
       <div class="bg"></div>
 			<h1>Blog</h1>
-      <p>This blog is powered by a headless CMS. It offers the flexibility to use any tech stack and allows for content reuse across multiple platforms. The system ensures fast performance even under high traffic, reduces security risks, and provides centralized content management.</p>
+      <h2>This blog is powered by a headless CMS. It offers the flexibility to use any tech stack and allows for content reuse across multiple platforms. The system ensures fast performance even under high traffic, reduces security risks, and provides centralized content management.</h2>
 			    <div class="blog-item-box">
             <div v-for="article in articles" :key="article._id" class="blog-item">
               <NuxtLink :to="`/articles/${article.slug}`" :title="`${article.title}`">
@@ -12,7 +12,7 @@
               <i class="material-icons">schedule</i>
               {{ formatDate(article.date) }}
               </time>
-              <h2>{{ article.title }}</h2>
+              <h3>{{ article.title }}</h3>
               </NuxtLink>
             </div>
           </div>

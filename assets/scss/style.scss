@@ -681,6 +681,7 @@ section {
 			z-index: 2;
 			line-height: 1.6rem;
 			word-break: break-all;
+			max-width: 700px;
 		}
 		a {
 			z-index: 2;
@@ -799,6 +800,7 @@ section {
 		h2 {
 			z-index: 1;
 			margin-bottom: 2rem;
+			max-width: 1000px;
 		}
 		p {
 			font-size: 1.3rem;
@@ -837,22 +839,29 @@ section {
 		flex-direction: column;
 		color: var(--sub-color);
 		margin-bottom: 3rem;
+		background: var(--white-color);
+		transition: all .5s ease;
+		padding: 10px;
+		&:hover {
+			background: transparent;
+		}
 	}
 	img {
 		width: 100%;
 		height: auto;
 		object-fit: cover;
-		margin-bottom: .8rem;
+		margin-bottom: .5rem;
 	}
-	h2 {
-		margin-top: .8rem;
+	h3 {
+		margin-top: .5rem;
+		font-size: 1.2rem;
 	}
 }
 
 time.date {
 	display: flex;
 	align-items: center;
-	margin-top: .5rem;
+	margin-top: .4rem;
 	i {
 		font-size: 1.1rem;
 		margin-right: .3rem;

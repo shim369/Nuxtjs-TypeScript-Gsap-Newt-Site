@@ -27,3 +27,11 @@
         </section>
 	</main>
 </template>
+<script>
+useHead({
+    title: 'About | Nuxt Base',
+    meta: [
+      { name: 'description', content: 'Nuxt Base is a website by Nuxt 3' }
+    ]
+})
+</script>

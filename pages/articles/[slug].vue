@@ -39,10 +39,10 @@ const { data } = await useAsyncData(`article-${slug}`, async () => {
 const article = data.value
 
 useHead({
-  title: article?.title,
-  meta: [
-    { name: 'description', content: 'This is Blog detail page' }
-  ]
+    title: article?.title + ' | Nuxt Base',
+    meta: [
+      { name: 'description', content: article?.title }
+    ]
 })
 
 const formatDate = (dateString: Date) => {

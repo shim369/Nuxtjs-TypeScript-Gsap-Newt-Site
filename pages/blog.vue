@@ -3,7 +3,7 @@
 		<section>
       <div class="bg"></div>
 			<h1>Blog</h1>
-      <h2>This blog is powered by a headless CMS. It offers the flexibility to use any tech stack and allows for content reuse across multiple platforms. The system ensures fast performance even under high traffic, reduces security risks, and provides centralized content management.</h2>
+      <p>This blog is powered by a headless CMS. It offers the flexibility to use any tech stack and allows for content reuse across multiple platforms. The system ensures fast performance even under high traffic, reduces security risks, and provides centralized content management.</p>
 			    <div class="blog-item-box">
             <div v-for="article in articles" :key="article._id" class="blog-item">
               <NuxtLink :to="`/articles/${article.slug}`" :title="`${article.title}`">
@@ -12,7 +12,7 @@
               <i class="material-icons">schedule</i>
               {{ formatDate(article.date) }}
               </time>
-              <h3>{{ article.title }}</h3>
+              <h2>{{ article.title }}</h2>
               </NuxtLink>
             </div>
           </div>
@@ -48,9 +48,9 @@ const formatDate = (dateString: Date) => {
 };
 
 useHead({
-  title: 'NUXT BASE',
+  title: 'Blog | Nuxt Base',
   meta: [
-    { name: 'description', content: 'NUXT BASE is a website by Nuxt 3' }
+    { name: 'description', content: 'Nuxt Base is a website by Nuxt 3' }
   ]
 })
 </script>

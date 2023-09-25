@@ -991,9 +991,12 @@ time.date {
 .reason-box {
 	position: relative; 
 	z-index: 2;
-	padding: 4rem;
+	padding: 2rem;
 	background: var(--white-color);
 	max-width: 1200px;
+	@media screen and (max-width: 800px) {
+		padding: 2rem 4%;
+	}
 }
 
 .skills-box {
@@ -1033,7 +1036,6 @@ time.date {
 	max-width: 800px;
 	display: flex;
     flex-direction: column;
-    align-items: center;
 	@media screen and (max-width: 800px) {
 		padding: 2rem 4%;
 	}

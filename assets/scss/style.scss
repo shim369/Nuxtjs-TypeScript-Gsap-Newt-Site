@@ -254,7 +254,7 @@ section {
 }
 
 .bg {
-	font-size: 2.2rem;
+	font-size: 2rem;
     @media screen and (max-width: 800px) {
 		font-size: 1.5rem;
     }
@@ -1013,6 +1013,7 @@ time.date {
 		padding: 2rem;
 		@media screen and (max-width: 800px) {
 			width: 100%;
+			padding: 2rem 4%;
 		}
 		h2 {
 			font-size: 1.3rem;
@@ -1024,12 +1025,18 @@ time.date {
 }
 
 .cta-section {
-    padding: 3rem;
+    padding: 2rem;
     background-color: var(--white-color);
     margin-top: 5rem;
 	position: relative;
 	z-index: 2;
 	max-width: 800px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	@media screen and (max-width: 800px) {
+		padding: 2rem 4%;
+	}
 	h2 {
 		text-align: center;
 	}

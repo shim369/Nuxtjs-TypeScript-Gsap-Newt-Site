@@ -120,7 +120,7 @@
   </main>
   </template>
 <script lang="ts" setup>
-import { computed, Ref, defineComponent, onMounted, ref } from 'vue';
+import { computed, onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Article } from '~/types/article';
@@ -147,103 +147,103 @@ const nextBlogs = computed(() => {
 });
   
 onMounted(() => {
-        if (process.client) {
-          const paths = document.querySelectorAll<HTMLElement>('#svgTxt path');
-    
-          paths.forEach(path => {
-            const delay = path.getAttribute('data-delay');
-            setTimeout(() => {
-              path.style.animationDelay = `${delay}ms`;
-            }, 0);
-          });
-          setTimeout(function() {
-            const overlay = document.getElementById("overlay");
-            const svgTxt = document.getElementById("svgTxt");
-            if (overlay && svgTxt) {
-              overlay.style.backgroundColor = "rgba(245, 243, 235, 0)";
-              svgTxt.style.display = "none";
-              setTimeout(function() {
-                overlay.style.display = "none";
-              }, 2000);
-            }
-          }, 2000);
-    
-          gsap.registerPlugin(ScrollTrigger);
-    
-          ScrollTrigger.defaults( {
-            toggleActions:"play none none reverse"
-          })
-    
-          gsap.to('.front-img-container', {
-            scale: 120,
-            ease: "ease",
-            scrollTrigger: {
-              trigger: '.move-section',
-              scrub: 1,
-              start: "top top",
-              end: "bottom",
-              pin: true
-            }
-          })
-    
-          gsap.to('.svg-txt2' , {
-            autoAlpha: 0,
-            duration: 1.5,
-            scrollTrigger: {
-            start: 1
-            }
-          })
-    
-          gsap.to('.txt-bottom', {
-            autoAlpha: 0,
-            letterSpacing: -10,
-            duration: 1,
-            scrollTrigger: {
-              start: 2
-            }
-          })
-    
-          gsap.from('.txt-bottom', {
-            letterSpacing: -10,
-            opacity: 0,
-            duration: 1
-          })
+  if (process.client) {
+    const paths = document.querySelectorAll<HTMLElement>('#svgTxt path');
 
-          const tl = gsap.timeline();
-    
-          tl.from('.left-side div', {
-            y: 150,
-            opacity: 0,
-            stagger: {
-              amount: .5
-            },
-            delay: 1.5
-          })
-    
-          ScrollTrigger.create( {
-            animation: tl,
-            trigger: '.wrapper',
-            start: "top top",
-            end: "+=10",
-            scrub: 1,
-            pin: true,
-          })
-        }
-      });
-  
-      const formatDate = (dateString: Date) => {
-        const date = new Date(dateString);
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-  
-        return `${year}.${month}.${day}`;
-      };
+    paths.forEach(path => {
+      const delay = path.getAttribute('data-delay');
+      setTimeout(() => {
+        path.style.animationDelay = `${delay}ms`;
+      }, 0);
+    });
+    setTimeout(function() {
+      const overlay = document.getElementById("overlay");
+      const svgTxt = document.getElementById("svgTxt");
+      if (overlay && svgTxt) {
+        overlay.style.backgroundColor = "rgba(245, 243, 235, 0)";
+        svgTxt.style.display = "none";
+        setTimeout(function() {
+          overlay.style.display = "none";
+        }, 2000);
+      }
+    }, 2000);
 
-      useHead({
-        title: 'Nuxt Base',
-        meta: [
-          { name: 'description', content: 'Nuxt Base is Web site by Nuxt.js' }
-        ]
-      })
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.defaults( {
+      toggleActions:"play none none reverse"
+    })
+
+    gsap.to('.front-img-container', {
+      scale: 120,
+      ease: "ease",
+      scrollTrigger: {
+        trigger: '.move-section',
+        scrub: 1,
+        start: "top top",
+        end: "bottom",
+        pin: true
+      }
+    })
+
+    gsap.to('.svg-txt2' , {
+      autoAlpha: 0,
+      duration: 1.5,
+      scrollTrigger: {
+      start: 1
+      }
+    })
+
+    gsap.to('.txt-bottom', {
+      autoAlpha: 0,
+      letterSpacing: -10,
+      duration: 1,
+      scrollTrigger: {
+        start: 2
+      }
+    })
+
+    gsap.from('.txt-bottom', {
+      letterSpacing: -10,
+      opacity: 0,
+      duration: 1
+    })
+
+    const tl = gsap.timeline();
+
+    tl.from('.left-side div', {
+      y: 150,
+      opacity: 0,
+      stagger: {
+        amount: .5
+      },
+      delay: 1.5
+    })
+
+    ScrollTrigger.create( {
+      animation: tl,
+      trigger: '.wrapper',
+      start: "top top",
+      end: "+=10",
+      scrub: 1,
+      pin: true,
+    })
+  }
+});
+
+const formatDate = (dateString: Date) => {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+
+  return `${year}.${month}.${day}`;
+};
+
+useHead({
+  title: 'Nuxt Base',
+  meta: [
+    { name: 'description', content: 'Nuxt Base is Web site by Nuxt.js' }
+  ]
+})
 </script>

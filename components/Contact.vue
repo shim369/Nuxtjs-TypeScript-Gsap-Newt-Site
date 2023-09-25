@@ -1,13 +1,70 @@
 <template>
 	<section id="contact" class="contact">
 		<h2>Contact</h2>
-		<form class="form-box" action="https://shim.form.newt.so/v1/vUf_6rML6" method="post">
+		<form class="form-box" @submit="onSubmit">
 			<div class="form-item">
-				<input id="name" name="name" placeholder="Name" autoComplete="name">
-				<input id="email" name="email" type="email" placeholder="Email" autoComplete="email">
-				<textarea id="message" name="message" placeholder="Message"></textarea>
+				<input id="name" v-model="name" name="name" aria-describedby="error-name-required" placeholder="Name" autoComplete="name">
+				<span v-if="errors.name" id="error-name-required" aria-live="assertive">
+					{{ errors.name }}
+				</span>
+
+				<input id="email" v-model="email" name="email" type="email" placeholder="Email" autoComplete="email">
+				<span v-if="errors.email" id="error-email-required" aria-live="assertive">
+					{{ errors.email }}
+				</span>
+
+				<textarea id="message" v-model="message" name="message" placeholder="Message"/>
+				<span v-if="errors.message" id="error-message-required" aria-live="assertive">
+					{{ errors.message }}
+				</span>
+
 				<button class="submit-btn" type="submit">Submit</button>
 			</div>
 		</form>
 	</section>
 </template>
+<script lang="ts" setup>
+import { useForm } from 'vee-validate'
+
+const schema = {
+  name (value: string) {
+    if (!value) {
+      return 'Name is required'
+    }
+    return true
+  },
+  email (value: string) {
+    if (!value) {
+      return 'Email is required'
+    }
+    return true
+  },
+  message (value: string) {
+    if (!value) {
+      return 'Message is required'
+    }
+    return true
+  }
+}
+
+const { useFieldModel, handleSubmit, errors } = useForm({
+  validationSchema: schema
+})
+
+const [name, email, message] = useFieldModel(['name', 'email', 'message'])
+
+const onSubmit = handleSubmit(async (values) => {
+  const formData = new FormData()
+  Object.entries(values).forEach(([key, value]) => {
+    formData.append(key, value)
+  })
+
+  await fetch('https://shim.form.newt.so/v1/vUf_6rML6', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      Accept: 'application/json'
+    }
+  })
+})
+</script>

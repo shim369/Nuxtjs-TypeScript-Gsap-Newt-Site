@@ -25,6 +25,7 @@
 </template>
 <script lang="ts" setup>
 import { useForm } from 'vee-validate'
+import { VueReCaptcha, useReCaptcha } from 'vue-recaptcha-v3'
 
 const schema = {
   name (value: string) {
@@ -53,11 +54,26 @@ const { useFieldModel, handleSubmit, errors } = useForm({
 
 const [name, email, message] = useFieldModel(['name', 'email', 'message'])
 
+const { vueApp } = useNuxtApp()
+	vueApp.use(VueReCaptcha, {
+	siteKey: '6Lf8DVUoAAAAAOj7-WXMaIfuRlWpmcpbp48ay4oc',
+	loaderOptions: {
+		renderParameters: {
+			hl: 'en'
+		}
+	}
+})
+const recaptchaInstance = useReCaptcha()
+
 const onSubmit = handleSubmit(async (values) => {
-  const formData = new FormData()
-  Object.entries(values).forEach(([key, value]) => {
-    formData.append(key, value)
-  })
+	await recaptchaInstance?.recaptchaLoaded()
+	const token = await recaptchaInstance?.executeRecaptcha('submit')
+	values.googleReCaptchaToken = token
+
+	const formData = new FormData()
+	Object.entries(values).forEach(([key, value]) => {
+		formData.append(key, value)
+	})
 
   await fetch('https://shim.form.newt.so/v1/vUf_6rML6', {
     method: 'POST',

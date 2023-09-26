@@ -961,7 +961,6 @@ time.date {
 	}
 
 	li {
-		margin-bottom: 1rem;
 		font-size: 1.3rem;
 		line-height: 1.6rem;
 		max-width: 1200px;
@@ -977,12 +976,6 @@ time.date {
 		border-top: 0.3px solid var(--sub-color);
 	}
 
-	.highlight {
-		color: var(--sub-color);
-		background: var(--accent-color);
-		margin-right: .3rem;
-		padding: 0 .5rem;
-	}
 	.read-text {
 		margin-bottom: 2rem;
 	}
@@ -991,11 +984,30 @@ time.date {
 .reason-box {
 	position: relative; 
 	z-index: 2;
-	padding: 2rem;
-	background: var(--white-color);
 	max-width: 1200px;
-	@media screen and (max-width: 800px) {
-		padding: 2rem 4%;
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@media screen and (max-width: 800px) {
+			flex-direction: column;
+		}
+		li {
+			width: 48%;
+			background: var(--white-color);
+			padding: 2rem;
+			margin-bottom: 2rem;
+			@media screen and (max-width: 800px) {
+				padding: 2rem 4%;
+				width: 100%;
+			}
+			span.reason-title {
+				display: block;
+				margin-bottom: 1rem;
+				font-weight: 600;
+				font-family: 'Nanum Myeongjo', serif;
+			}
+		}
 	}
 }
 

@@ -1001,11 +1001,13 @@ time.date {
 				padding: 2rem 4%;
 				width: 100%;
 			}
-			span.reason-title {
-				display: block;
-				margin-bottom: 1rem;
-				font-weight: 600;
-				font-family: 'Nanum Myeongjo', serif;
+			span {
+				&.reason-title {
+					display: block;
+					margin-bottom: 1rem;
+					font-weight: 600;
+					font-family: 'Nanum Myeongjo', serif;
+				}
 			}
 		}
 	}

@@ -776,6 +776,10 @@ section {
 				z-index: 1;
 			}
 		}
+		.under-contents {
+			z-index: 1;
+			position: relative;
+		}
 		h1 {
 			font-size: 3rem;
 			margin-bottom: 5rem;

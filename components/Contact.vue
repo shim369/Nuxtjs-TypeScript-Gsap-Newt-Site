@@ -75,12 +75,22 @@ const onSubmit = handleSubmit(async (values) => {
 		formData.append(key, value)
 	})
 
-  await fetch('https://shim.form.newt.so/v1/vUf_6rML6', {
-    method: 'POST',
-    body: formData,
-    headers: {
-      Accept: 'application/json'
-    }
-  })
+	try {
+		const response = await fetch('https://shim.form.newt.so/v1/vUf_6rML6', {
+			method: 'POST',
+			body: formData,
+			headers: {
+			Accept: 'application/json'
+		}
+	})
+
+	if (response.ok) {
+		await navigateTo('/thanks')
+	} else {
+		await navigateTo('/error')
+	}
+	} catch (err) {
+		await navigateTo('/error')
+	}
 })
 </script>

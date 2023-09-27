@@ -964,13 +964,18 @@ time.date {
 	text-align: center;
 	margin-top: 2rem;
 	color: var(--sub-color);
+	@media screen and (max-width: 800px) {
+		font-size: .8rem;
+	}
 	a {
 		color: var(--sub-color);
 		text-decoration: underline;
 	}
 }
 
-.grecaptcha-badge { visibility: hidden; }
+.grecaptcha-badge {
+	visibility: hidden;
+}
 
 .about,.skills {
 	ul {

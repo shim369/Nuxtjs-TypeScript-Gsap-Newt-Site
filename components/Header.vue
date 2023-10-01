@@ -29,6 +29,14 @@ const toggleNav = () => {
 };
 
 onMounted(() => {
+
+	const logoLink = document.querySelector('.logo');
+
+	logoLink.addEventListener('click', (event) => {
+		window.location.reload();
+		event.preventDefault();
+	});
+
 	const navLinks = document.querySelectorAll('.menu a');
 
 	const spNav = document.querySelector('.sp-nav');

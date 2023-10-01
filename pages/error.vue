@@ -16,7 +16,7 @@ useHead({
                 <h1>Error!</h1>
                 </div>
                 <div class="under-contents">
-                <NuxtLink href="/">
+                <NuxtLink to="/">
                     Back to Top
                 </NuxtLink>
                 </div>

@@ -1,7 +1,7 @@
 <template>
 <header>
 	<nav class="navbar" id="nav">
-	<NuxtLink to="/" class="logo">Nuxt Base</NuxtLink>
+	<a href="/" class="logo">Nuxt Base</a>
 	<nav class="menu">
 		<NuxtLink to="/about">about</NuxtLink>
 		<NuxtLink to="/skills">skills</NuxtLink>
@@ -29,14 +29,6 @@ const toggleNav = () => {
 };
 
 onMounted(() => {
-
-	const logoLink = document.querySelector('.logo');
-
-	logoLink.addEventListener('click', (event) => {
-		window.location.reload();
-		event.preventDefault();
-	});
-
 	const navLinks = document.querySelectorAll('.menu a');
 
 	const spNav = document.querySelector('.sp-nav');

@@ -22,7 +22,7 @@
       <div class="front-img-container">
         <picture>
           <source srcset="/mask.webp" type="image/webp" />
-          <img src="/mask.jpg" alt="mask" class="mask" />
+          <img src="/mask.png" alt="mask" class="mask" />
         </picture>
       </div>
   

@@ -15,14 +15,14 @@
     <section class="move-section">
       <div class="back-img-container">
         <picture>
-          <source srcset="green.webp" type="image/webp" />
-          <img src="green.jpg" alt="green" class="nature" />
+          <source srcset="/green.webp" type="image/webp" />
+          <img src="/green.jpg" alt="green" class="nature" />
         </picture>
       </div>
       <div class="front-img-container">
         <picture>
-          <source srcset="mask.webp" type="image/webp" />
-          <img src="mask.jpg" alt="mask" class="mask" />
+          <source srcset="/mask.webp" type="image/webp" />
+          <img src="/mask.jpg" alt="mask" class="mask" />
         </picture>
       </div>
   

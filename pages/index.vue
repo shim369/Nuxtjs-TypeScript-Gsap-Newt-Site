@@ -14,10 +14,16 @@
   <main class="wrapper">
     <section class="move-section">
       <div class="back-img-container">
-        <img src="/green.jpg" alt="" class="nature">
+        <picture>
+          <source srcset="green.webp" type="image/webp" />
+          <img src="green.jpg" alt="green" class="nature" />
+        </picture>
       </div>
       <div class="front-img-container">
-        <img src="/mask.png" alt="" class="mask">
+        <picture>
+          <source srcset="mask.webp" type="image/webp" />
+          <img src="mask.jpg" alt="mask" class="mask" />
+        </picture>
       </div>
   
       <div class="front-text-container">

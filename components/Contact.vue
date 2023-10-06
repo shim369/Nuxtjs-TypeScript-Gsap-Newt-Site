@@ -1,7 +1,7 @@
 <template>
 	<section id="contact" class="contact">
 		<h2>Contact</h2>
-		<form class="form-box" @submit="onSubmit">
+		<form class="form-box" @submit="onSubmit" data-aos="fade-up">
 			<div class="form-item">
 				<input id="name" v-model="name" name="name" aria-describedby="error-name-required" placeholder="Name" autoComplete="name">
 				<span v-if="errors.name" id="error-name-required" aria-live="assertive">

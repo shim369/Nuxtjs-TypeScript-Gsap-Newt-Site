@@ -59,7 +59,7 @@
           <p>Skills</p>
         </div>
         <div class="main-right-side">
-          <div class="main-right-contents">
+          <div class="main-right-contents" data-aos="fade-up">
             <div class="text-title">
               <h2 class="bg">My Journey in Tech<br>From JavaScript to a Diverse Skillset</h2>
             </div>
@@ -77,7 +77,7 @@
     <section class="main-section">
       <div class="main-inner">
         <div class="main-left-side2">
-          <div class="main-left-contents">
+          <div class="main-left-contents" data-aos="fade-up">
             <div class="blog-item-flex">
               <div class="blog-item-bg" v-if="latestBlog">
                 <NuxtLink :to="`/articles/${latestBlog.slug}`">
@@ -223,7 +223,7 @@ onMounted(() => {
 
     const tl = gsap.timeline();
 
-    tl.from('.left-side div', {
+    tl.from('.left-side', {
       y: 150,
       opacity: 0,
       stagger: {

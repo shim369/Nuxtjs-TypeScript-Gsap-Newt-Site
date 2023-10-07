@@ -3,15 +3,15 @@
         <section class="about">
             <div class="bg"></div>
             <h1>about</h1>
-            <h2>Elevate Your Web Development with Nuxt 3</h2>
-            <p class="read-text">Web development has been evolving rapidly, and in this era of change, Nuxt 3 emerges as an avant-garde framework that empowers developers to craft impeccable web experiences.
+            <h2 data-aos="fade-up">Elevate Your Web Development with Nuxt 3</h2>
+            <p class="read-text" data-aos="fade-up">Web development has been evolving rapidly, and in this era of change, Nuxt 3 emerges as an avant-garde framework that empowers developers to craft impeccable web experiences.
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio distinctio optio quaerat error esse deleniti quos velit vitae ad pariatur voluptate iste officia laborum, nobis unde delectus libero consectetur dolorum!</p>
         
             <hr>
 
-            <h2>Why Nuxt 3?</h2>
+            <h2 data-aos="fade-up">Why Nuxt 3?</h2>
 
-            <div class="flex-box">
+            <div class="flex-box" data-aos="fade-up">
                 <div class="flex-item">
                     <h2>Built on Vue 3</h2>
                     <p>Nuxt 3 inherits all the advantages of Vue 3. This means developers can utilize the reactivity system, composition API, and more, resulting in cleaner and more efficient code.</p>
@@ -41,7 +41,7 @@
                     <p>One of Nuxt 3's greatest strengths is its community. From novice developers to experts, there's a passionate group of individuals constantly contributing to its growth. With a plethora of plugins, modules, and tutorials available, you're never alone in your development journey.</p>
                 </div>
             </div>
-            <p>In a nutshell, Nuxt 3 is not just a framework; it's a movement towards a more efficient, performative, and seamless web development experience. Whether you're building a personal blog, an e-commerce site, or a large-scale web application, Nuxt 3 provides a robust foundation to ensure success.</p>
+            <p data-aos="fade-up">In a nutshell, Nuxt 3 is not just a framework; it's a movement towards a more efficient, performative, and seamless web development experience. Whether you're building a personal blog, an e-commerce site, or a large-scale web application, Nuxt 3 provides a robust foundation to ensure success.</p>
 			<Cta />
         </section>
 	</main>

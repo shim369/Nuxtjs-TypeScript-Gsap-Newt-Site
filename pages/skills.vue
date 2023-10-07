@@ -3,11 +3,11 @@
         <section class="skills">
             <div class="bg"></div>
             <h1>skills</h1>
-            <h2>My Journey in Tech</h2>
+            <h2 data-aos="fade-up">My Journey in Tech</h2>
 
-            <p class="read-text">When I first set foot in the world of programming, my starting point was JavaScript. Over the years, my technical prowess has evolved exponentially, mastering a vast array of frameworks and languages.</p>
+            <p class="read-text" data-aos="fade-up">When I first set foot in the world of programming, my starting point was JavaScript. Over the years, my technical prowess has evolved exponentially, mastering a vast array of frameworks and languages.</p>
 
-            <div class="flex-box">
+            <div class="flex-box" data-aos="fade-up">
                 <div class="flex-item">
                     <h2>Static Site Generation with Astro</h2>
                     <p>I've honed my skills in Astro to craft fast, SEO-optimized websites. This framework excels in static site generation, and I know how to maximize its potential.</p>
@@ -36,7 +36,7 @@
                     <p>Figma plays a crucial role in the design process. I excel in system development, UI/UX design, and creating prototypes for client and team feedback.</p>
                 </div>
             </div>
-            <p>These are but a glimpse of the skills I possess. In a world that continually evolves with technology, I consistently strive to keep abreast of the latest trends and techniques, ensuring that I deliver the best results in every project.</p>
+            <p data-aos="fade-up">These are but a glimpse of the skills I possess. In a world that continually evolves with technology, I consistently strive to keep abreast of the latest trends and techniques, ensuring that I deliver the best results in every project.</p>
 
 			<Cta />
         </section>

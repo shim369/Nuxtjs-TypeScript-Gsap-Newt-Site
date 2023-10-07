@@ -3,25 +3,25 @@
 		<section>
       <div class="bg"></div>
 			<h1>Blog</h1>
-      <p class="read-text">This blog is powered by a headless CMS. It offers the flexibility to use any tech stack and allows for content reuse across multiple platforms. The system ensures fast performance even under high traffic, reduces security risks, and provides centralized content management.</p>
-			    <div class="blog-item-box">
-            <div v-for="article in articles" :key="article._id" class="blog-item">
-              <NuxtLink :to="`/articles/${article.slug}`" :title="`${article.title}`">
-              <img :src="article.coverImage.src" :alt="`Cover image for ${article.title}`" width="400" height="300" loading="lazy" />
-              <time class="date">
+      <p class="read-text" data-aos="fade-up">This blog is powered by a headless CMS. It offers the flexibility to use any tech stack and allows for content reuse across multiple platforms. The system ensures fast performance even under high traffic, reduces security risks, and provides centralized content management.</p>   
+      <div class="blog-item-box">
+        <div v-for="article in articles" :key="article._id" class="blog-item" data-aos="fade-up">
+          <NuxtLink :to="`/articles/${article.slug}`" :title="`${article.title}`">
+            <img :src="article.coverImage.src" :alt="`Cover image for ${article.title}`" width="400" height="300" loading="lazy" />
+            <time class="date">
               <i class="material-icons">schedule</i>
               {{ formatDate(article.date) }}
-              </time>
-              <h2>{{ article.title }}</h2>
-              </NuxtLink>
-            </div>
-          </div>
+            </time>
+            <h2>{{ article.title }}</h2>
+          </NuxtLink>
+        </div>
+      </div>
 		</section>
 	</main>
 </template>
-<script lang="ts" setup>
+<script setup lang="ts">
 import type { Article } from '~/types/article'
-import { useAsyncData, useNuxtApp, useHead } from '#app'
+import { useAsyncData, useNuxtApp } from '#app'
 
 const { data } = await useAsyncData('articles', async () => {
   const { $newtClient } = useNuxtApp()
@@ -34,9 +34,6 @@ const { data } = await useAsyncData('articles', async () => {
   })
 })
 const articles = data.value?.items ?? []
-
-// const nuxtArticles = articles.filter((article: Article) => article.category.name === 'Nuxt')
-
 
 const formatDate = (dateString: Date) => {
   const date = new Date(dateString);

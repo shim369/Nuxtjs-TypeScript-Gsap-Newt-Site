@@ -16,13 +16,13 @@
       <div class="back-img-container">
         <picture>
           <source srcset="/green.webp" type="image/webp" />
-          <img src="/green.jpg" alt="green" class="nature" />
+          <img src="/green.jpg" alt="green" class="nature" width="1920" height="1280" />
         </picture>
       </div>
       <div class="front-img-container">
         <picture>
           <source srcset="/mask.webp" type="image/webp" />
-          <img src="/mask.png" alt="mask" class="mask" />
+          <img src="/mask.png" alt="mask" class="mask" width="1920" height="1280" />
         </picture>
       </div>
   

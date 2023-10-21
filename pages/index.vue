@@ -15,18 +15,18 @@
     <section class="move-section">
       <div class="back-img-container">
         <picture>
-          <source srcset="green.webp" media="(min-width:700px)" type="image/webp" />
-          <source srcset="green.jpg" media="(min-width:700px)" />
-          <source srcset="green_sp.webp" type="image/webp" />
-          <img src="green_sp.jpg" alt="green" class="nature" />
+          <source srcset="/green.webp" media="(min-width:700px)" type="image/webp" />
+          <source srcset="/green.jpg" media="(min-width:700px)" />
+          <source srcset="/green_sp.webp" type="image/webp" />
+          <img src="/green_sp.jpg" alt="green" class="nature" />
         </picture>
       </div>
       <div class="front-img-container">
         <picture>
-          <source srcset="mask.webp" media="(min-width:700px)" type="image/webp" />
-          <source srcset="mask.png" media="(min-width:700px)" />
-          <source srcset="mask_sp.webp" type="image/webp" />
-          <img src="mask_sp.png" alt="mask" class="mask" />
+          <source srcset="/mask.webp" media="(min-width:700px)" type="image/webp" />
+          <source srcset="/mask.png" media="(min-width:700px)" />
+          <source srcset="/mask_sp.webp" type="image/webp" />
+          <img src="/mask_sp.png" alt="mask" class="mask" />
         </picture>
       </div>
   

@@ -57,12 +57,6 @@ body {
 	@media screen and (max-width: 800px) {
 		padding: 0 4%;
 	}
-	path {
-		fill-opacity: 0;
-		fill: none;
-		stroke: none;
-		transition: stroke 2s;
-	}
 }
 
 .svg-txt2 {

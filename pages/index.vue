@@ -195,7 +195,7 @@ onMounted(() => {
     })
 
     gsap.to('.front-img-container', {
-      scale: 120,
+      scale: 600,
       ease: "ease",
       scrollTrigger: {
         trigger: '.move-section',

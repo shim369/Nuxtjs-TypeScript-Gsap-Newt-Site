@@ -22,7 +22,7 @@
     "@nuxt/image": "^0.7.1",
     "aos": "^2.3.4",
     "gsap": "^3.12.2",
-    "newt-client-js": "^3.2.6",
+    "newt-client-js": "^3.2.8",
     "vee-validate": "^4.11.7",
     "vue-recaptcha-v3": "^2.0.1"
   }

@@ -11,27 +11,18 @@ export default defineNuxtConfig({
       },
       link: [
         {
-          rel: 'preconnect',
-          href: 'https://fonts.googleapis.com',
-          crossorigin: 'anonymous'
-        },
-        {
-          rel: 'preload',
-          as: 'font',
-          type: 'font/woff2',
-          href: 'https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
-          crossorigin: 'anonymous'
-        },
-        {
-          rel: 'preload',
-          as: 'style',
-          href: 'https://fonts.googleapis.com/icon?family=Material+Icons&display=swap'
+          rel: "preconnect",
+          href: "https://fonts.googleapis.com",
         },
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/icon?family=Material+Icons&display=swap',
-          media: 'print',
-          onload: "this.media='all'"
+          crossorigin: "",
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;900&family=Nanum+Myeongjo:wght@700&display=swap',
+          crossorigin: "",
         }
       ]
     }

@@ -186,7 +186,7 @@
 import { computed, onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Article } from '~/types/article';
+import type { Article } from '~/types/article';
 import { useAsyncData, useNuxtApp } from '#app';
 
 const fetchData = async () => {

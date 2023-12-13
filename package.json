@@ -19,7 +19,8 @@
     "vue-tsc": "^1.8.11"
   },
   "dependencies": {
-    "@nuxt/image": "^0.7.1",
+    "@nuxt/image": "^1.1.0",
+    "@nuxtjs/google-fonts": "^3.1.1",
     "aos": "^2.3.4",
     "gsap": "^3.12.2",
     "newt-client-js": "^3.2.8",

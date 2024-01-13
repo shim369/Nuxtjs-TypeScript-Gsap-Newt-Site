@@ -46,7 +46,7 @@
         </section>
 	</main>
 </template>
-<script setup>
+<script setup lang="ts">
 useHead({
     title: 'About | Nuxt Base',
     meta: [

@@ -402,6 +402,8 @@ section {
 	top: 0;
 	height: 100vh;
 	width: 100vw;
+	display: flex;
+	justify-content: space-between;
 }
 
 .bg-p {
@@ -415,8 +417,6 @@ section {
 	background-attachment: fixed;
 	background-size: cover;
 	background-image: url(/pc.webp);
-	// border-top: solid 80px #6a4b1b;
-	// border-bottom: solid 80px #6a4b1b;
 	position: relative;
 
 	&::before {
@@ -455,6 +455,25 @@ section {
 	@media screen and (max-width: 800px) {
 		width: 100%;
 		padding: 2rem 4%;
+	}
+}
+
+.right-side {
+	width: 45%;
+	position: relative;
+	z-index: 0;
+    color: #fff;
+    height: 100%;
+	opacity: 1;
+
+	@media screen and (max-width: 800px) {
+		display: none;
+	}
+	.about-title {
+		position: absolute;
+		right: 2rem;
+		bottom: 0;
+		font-size: 7.5rem;
 	}
 }
 

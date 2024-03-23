@@ -108,12 +108,15 @@
             <NuxtLink to="/about" class="detail-btn">Show Detail</NuxtLink>
           </div>
         </div>
+        <div class="right-side">
+          <p class="about-title">About</p>
+        </div>
       </div>
     </section>
     <section class="main-section">
       <div class="news-content">
         <div data-aos="fade-left">
-          <h3 class="news-title">News</h3>
+          <p class="news-title">News</p>
           <div class="news-list">
             <dl>
               <dt>2023.10.01</dt>
@@ -302,12 +305,16 @@ onMounted(() => {
     const tl = gsap.timeline();
 
     tl.from('.left-side', {
-      y: 150,
+      y: 300,
       opacity: 0,
       stagger: {
         amount: .5
       },
-      delay: 1.5
+      delay: 1
+    }).from('.right-side', {
+      x: 80,
+      opacity: 0,
+      delay: 1
     })
 
     ScrollTrigger.create({

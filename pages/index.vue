@@ -112,19 +112,21 @@
     </section>
     <section class="main-section">
       <div class="news-content">
-        <h3 class="news-title">News</h3>
-        <div class="news-list">
-          <dl>
-            <dt>2023.10.01</dt>
-            <dd>
-              I have opened a website.
-            </dd>
-          </dl>
+        <div data-aos="fade-left">
+          <h3 class="news-title">News</h3>
+          <div class="news-list">
+            <dl>
+              <dt>2023.10.01</dt>
+              <dd>
+                I have opened a website.
+              </dd>
+            </dl>
+          </div>
         </div>
       </div>
       <div class="main-inner">
         <div class="main-left-side">
-          <p>Skills</p>
+          <p data-aos="fade-down">Skills</p>
         </div>
         <div class="main-right-side">
           <div class="main-right-contents" data-aos="fade-right">
@@ -132,7 +134,8 @@
               <h2 class="bg">My Journey in Tech<br>From JavaScript to a Diverse Skillset</h2>
             </div>
             <div class="text-container">
-              <p>When I first embarked on my programming journey, I started with JavaScript. Since then, my skill set has
+              <p>When I first embarked on my programming journey, I started with JavaScript. Since then, my skill set
+                has
                 expanded to include a variety of frameworks and languages. I'm proficient in static site generation with
                 Astro, server-side rendering with Next.js and Nuxt.js, back-end development with Python and Django, and
                 even design and prototyping with Newt and Figma. These are just some of the skills I bring to the table.
@@ -187,7 +190,7 @@
           </div>
         </div>
         <div class="main-right-side2">
-          <p>Blog</p>
+          <p data-aos="fade-down">Blog</p>
         </div>
       </div>
     </section>

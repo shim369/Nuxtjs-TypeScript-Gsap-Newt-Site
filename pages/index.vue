@@ -99,7 +99,7 @@
       <div class="back-text-container">
         <div class="left-side">
           <div class="text-title green">
-            <h2 class="bg">Elevate Your Web Development<br>The Advantages of Nuxt 3</h2>
+            <h2 class="bg-title">Elevate Your Web Development<br>The Advantages of Nuxt 3</h2>
           </div>
           <div class="text-container">
             <p class="green">Nuxt 3 is based on Vue 3, offering high performance and efficient development support. It
@@ -116,12 +116,12 @@
     <section class="main-section">
       <div class="news-content">
         <div data-aos="fade-left">
-          <p class="news-title">News</p>
-          <div class="news-list">
+          <p class="news-title">Latest News</p>
+          <div class="news-list" v-if="latestBlog">
             <dl>
-              <dt>2023.10.01</dt>
+              <dt>{{ formatDate(latestBlog.date) }}</dt>
               <dd>
-                I have opened a website.
+                {{ latestBlog.title }}
               </dd>
             </dl>
           </div>
@@ -134,7 +134,7 @@
         <div class="main-right-side">
           <div class="main-right-contents" data-aos="fade-right">
             <div class="text-title">
-              <h2 class="bg">My Journey in Tech<br>From JavaScript to a Diverse Skillset</h2>
+              <h2 class="bg-title">My Journey in Tech<br>From JavaScript to a Diverse Skillset</h2>
             </div>
             <div class="text-container">
               <p>When I first embarked on my programming journey, I started with JavaScript. Since then, my skill set

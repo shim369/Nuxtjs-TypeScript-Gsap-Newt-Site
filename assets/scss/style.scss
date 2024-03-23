@@ -499,6 +499,10 @@ section {
 
 	&.green {
 		text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
+		.bg-title {
+			border-left: 5px solid var(--white-color);
+			padding-left: 16px;
+		}
 	}
 }
 
@@ -621,7 +625,7 @@ section {
 				height: 100%;
 				display: flex;
 				justify-content: flex-start;
-				padding: 10px;
+				padding: 20px;
 			}
 
 			.blog-item-bg {
@@ -695,16 +699,11 @@ section {
 				}
 
 				img {
-					max-width: 100px;
+					max-width: 120px;
 					width: 100%;
 					height: auto;
 					max-height: 100px;
 					object-fit: cover;
-
-					@media screen and (max-width: 800px) {
-						max-width: 80px;
-						max-height: 80px;
-					}
 				}
 
 				.date {

@@ -111,6 +111,17 @@
       </div>
     </section>
     <section class="main-section">
+      <div class="news-content">
+        <h3 class="news-title">News</h3>
+        <div class="news-list">
+          <dl>
+            <dt>2023.10.01</dt>
+            <dd>
+              I have opened a website.
+            </dd>
+          </dl>
+        </div>
+      </div>
       <div class="main-inner">
         <div class="main-left-side">
           <p>Skills</p>
@@ -300,7 +311,7 @@ onMounted(() => {
       animation: tl,
       trigger: '.wrapper',
       start: "top top",
-      end: "+=10",
+      end: "+=1",
       scrub: 1,
       pin: true,
     })

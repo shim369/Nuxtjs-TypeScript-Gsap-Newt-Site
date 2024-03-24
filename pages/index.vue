@@ -108,9 +108,7 @@
             <NuxtLink to="/about" class="detail-btn">Show Detail</NuxtLink>
           </div>
         </div>
-        <div class="right-side">
-          <p class="about-title">About</p>
-        </div>
+        <p class="section-title about-title">About</p>
       </div>
     </section>
     <section class="main-section">
@@ -132,6 +130,7 @@
           <p data-aos="fade-down">Skills</p>
         </div>
         <div class="main-right-side">
+          <p class="section-title skills-title" data-aos="fade-left">Skills</p>
           <div class="main-right-contents">
             <div data-aos="fade-right">
               <div class="text-title">
@@ -160,6 +159,7 @@
     <section class="main-section">
       <div class="main-inner">
         <div class="main-left-side2">
+          <p class="section-title blog-title" data-aos="fade-left">Blog</p>
           <div class="main-left-contents" data-aos="fade-left">
             <div class="blog-item-flex">
               <div class="blog-item-bg" v-if="latestBlog">
@@ -316,7 +316,7 @@ onMounted(() => {
         amount: .5
       },
       delay: 1
-    }).from('.right-side', {
+    }).from('.about-title', {
       x: 80,
       opacity: 0,
       delay: 1

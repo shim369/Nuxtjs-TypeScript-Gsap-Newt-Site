@@ -459,7 +459,8 @@ section {
 	opacity: 1;
 	position: relative;
 	z-index: 0;
-	width: 100%;
+	width: 70%;
+	max-width: 700px;
 	height: 100vh;
 
 	@media screen and (max-width: 800px) {

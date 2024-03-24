@@ -320,11 +320,10 @@ section {
 	font-weight: bold;
 	width: 150px;
 	vertical-align: top;
-	line-height: 1.4;
+	line-height: 1.2;
 
 	@media screen and (max-width: 800px) {
 		font-size: 1.5rem;
-		border-bottom: 1px solid #fff;
 	}
 }
 
@@ -341,23 +340,19 @@ section {
 		line-height: 1;
 
 		@media screen and (max-width: 800px) {
-			margin-top: 40px;
+			margin-top: 30px;
 		}
 	}
 
 	dt {
 		display: inline-block;
 		padding-right: 10px;
-		border-right: 1px solid #fff;
+		border-right: 1px solid var(--white-color);
 		margin-right: 10px;
 		line-height: 1;
 		font-size: 1rem;
 		vertical-align: top;
 		margin-top: 5px;
-
-		@media screen and (max-width: 800px) {
-			border-right: none;
-		}
 	}
 
 	dd {
@@ -369,8 +364,16 @@ section {
 		vertical-align: top;
 
 		@media screen and (max-width: 800px) {
-			margin-top: 5px;
-			width: 100%;
+			width: 240px;
+		}
+
+		a {
+			color: var(--white-color);
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
 }

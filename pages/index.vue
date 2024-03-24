@@ -119,7 +119,7 @@
             <dl>
               <dt>{{ formatDate(latestBlog.date) }}</dt>
               <dd>
-                {{ latestBlog.title }}
+                <NuxtLink :to="`/articles/${latestBlog.slug}`">{{ latestBlog.title }}</NuxtLink>
               </dd>
             </dl>
           </div>

@@ -114,6 +114,13 @@ body {
 	&:hover {
 		background: var(--white-color);
 	}
+
+	@media screen and (max-width: 800px) {
+
+		&:hover {
+			background: transparent;
+		}
+	}
 }
 
 .menu {
@@ -393,7 +400,7 @@ section {
 	font-size: 2rem;
 
 	@media screen and (max-width: 800px) {
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 	}
 }
 
@@ -499,6 +506,7 @@ section {
 
 	&.green {
 		text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
+
 		.bg-title {
 			border-left: 5px solid var(--white-color);
 			padding-left: 16px;
@@ -778,7 +786,12 @@ section {
 		position: relative;
 		padding: 4rem;
 
-		&::before, &::after{ 
+		@media screen and (max-width: 800px) {
+			padding: 1.5rem;
+		}
+
+		&::before,
+		&::after {
 			content: '';
 			width: 20px;
 			height: 30px;
@@ -786,20 +799,20 @@ section {
 			display: inline-block;
 		}
 
-		&::before{
+		&::before {
 			border-left: solid 1px var(--sub-color);
 			border-top: solid 1px var(--sub-color);
-			top:0;
+			top: 0;
 			left: 0;
 		}
 
-		&::after{
+		&::after {
 			border-right: solid 1px var(--sub-color);
 			border-bottom: solid 1px var(--sub-color);
-			bottom:0;
+			bottom: 0;
 			right: 0;
 		}
-	
+
 
 		h2 {
 			color: var(--sub-color);

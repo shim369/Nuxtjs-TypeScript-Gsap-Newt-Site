@@ -159,7 +159,7 @@
     <section class="main-section">
       <div class="main-inner">
         <div class="main-left-side2">
-          <p class="section-title blog-title" data-aos="fade-left">Blog</p>
+          <p class="section-title blogs-title" data-aos="fade-left">Blog</p>
           <div class="main-left-contents" data-aos="fade-left">
             <div class="blog-item-flex">
               <div class="blog-item-bg" v-if="latestBlog">

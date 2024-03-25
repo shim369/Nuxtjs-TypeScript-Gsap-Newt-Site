@@ -1,22 +1,22 @@
 <template>
-    <main class="under-main">
-        <template v-if="article">
-            <section class="blog-detail">
-              <div class="container">
-                <div class="bg"></div>
-                  <h1 class="blog-title">{{ article?.title }}</h1>
-                <div class="blog-detail-inner">
-                    <div class="date">
-                    <i class="material-icons">schedule</i>
-                    {{ formatDate(article.date) }}
-                    </div>
-                  <div v-html="article?.body" class="blog-body">
-                  </div>
-                </div>
-              </div>
-			      </section>
-        </template>
-    </main>
+  <main class="under-main">
+    <template v-if="article">
+      <section class="blog-detail">
+        <div class="container">
+          <div class="bg"></div>
+          <h1 class="blog-title">{{ article?.title }}</h1>
+          <div class="blog-detail-inner">
+            <div class="date">
+              <i class="material-icons">schedule</i>
+              {{ formatDate(article.date) }}
+            </div>
+            <div v-html="article?.body" class="blog-body">
+            </div>
+          </div>
+        </div>
+      </section>
+    </template>
+  </main>
 </template>
 
 <script lang="ts" setup>
@@ -39,10 +39,10 @@ const { data } = await useAsyncData(`article-${slug}`, async () => {
 const article = data.value
 
 useHead({
-    title: article?.title + ' | Nuxt Base',
-    meta: [
-      { name: 'description', content: article?.title }
-    ]
+  title: article?.title + ' | Nuxt Base',
+  meta: [
+    { name: 'description', content: article?.title }
+  ]
 })
 
 const formatDate = (dateString: Date) => {

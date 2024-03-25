@@ -1041,7 +1041,7 @@ section {
 	}
 }
 
-time.date {
+.date {
 	display: flex;
 	align-items: center;
 	margin-top: .4rem;
@@ -1056,7 +1056,7 @@ time.date {
 	position: relative;
 	z-index: 1;
 
-	time.date {
+	.date {
 		justify-content: center;
 	}
 

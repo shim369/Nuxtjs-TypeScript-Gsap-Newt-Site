@@ -154,7 +154,7 @@
       </div>
     </section>
     <section class="bg-p">
-      <p data-aos="fade-up">Web Development</p>
+      <h2 data-aos="fade-up">Web Development</h2>
     </section>
     <section class="main-section">
       <div class="main-inner">

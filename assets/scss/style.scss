@@ -1084,7 +1084,7 @@ section {
 
 	h2 {
 		font-size: 3rem;
-		color: var(--sub-color);
+		color: var(--white-color);
 	}
 }
 
@@ -1154,14 +1154,14 @@ section {
 .recaptcha {
 	text-align: center;
 	margin-top: 2rem;
-	color: var(--sub-color);
+	color: var(--white-color);
 
 	@media screen and (max-width: 800px) {
 		font-size: .8rem;
 	}
 
 	a {
-		color: var(--sub-color);
+		color: var(--white-color);
 		text-decoration: underline;
 	}
 }

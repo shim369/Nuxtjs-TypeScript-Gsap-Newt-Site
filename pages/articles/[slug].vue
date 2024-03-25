@@ -6,10 +6,10 @@
                 <div class="bg"></div>
                   <h1 class="blog-title">{{ article?.title }}</h1>
                 <div class="blog-detail-inner">
-                    <time class="date">
+                    <div class="date">
                     <i class="material-icons">schedule</i>
                     {{ formatDate(article.date) }}
-                    </time>
+                    </div>
                   <div v-html="article?.body" class="blog-body">
                   </div>
                 </div>

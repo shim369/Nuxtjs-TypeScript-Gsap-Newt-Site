@@ -8,10 +8,10 @@
         <div v-for="article in articles" :key="article._id" class="blog-item" data-aos="fade-up">
           <NuxtLink :to="`/articles/${article.slug}`" :title="`${article.title}`">
             <img :src="article.coverImage.src" :alt="`Cover image for ${article.title}`" width="400" height="300" loading="lazy" />
-            <time class="date">
+            <div class="date">
               <i class="material-icons">schedule</i>
               {{ formatDate(article.date) }}
-            </time>
+            </div>
             <h2>{{ article.title }}</h2>
           </NuxtLink>
         </div>

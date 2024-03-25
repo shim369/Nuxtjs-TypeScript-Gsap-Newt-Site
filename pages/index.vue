@@ -166,13 +166,13 @@
                 <NuxtLink :to="`/articles/${latestBlog.slug}`">
                   <img :src="latestBlog.coverImage.src" :width="400" :height="300"
                     :alt="`Cover image for ${latestBlog.title}`" />
-                  <span>
+                  <div>
                     <div class="date">
                       <i class="material-icons">schedule</i>
                       {{ formatDate(latestBlog.date) }}
                     </div>
                     <h3>{{ latestBlog.title }}</h3>
-                  </span>
+                  </div>
                 </NuxtLink>
               </div>
               <div class="blog-item-sm-box">
@@ -180,13 +180,13 @@
                   <NuxtLink :to="`/articles/${article.slug}`">
                     <img :src="article.coverImage.src" :width="400" :height="300"
                       :alt="`Cover image for ${article.title}`" />
-                    <span>
+                    <div>
                       <div class="date">
                         <i class="material-icons">schedule</i>
                         {{ formatDate(article.date) }}
                       </div>
                       <h3>{{ article.title }}</h3>
-                    </span>
+                    </div>
                   </NuxtLink>
                 </div>
               </div>

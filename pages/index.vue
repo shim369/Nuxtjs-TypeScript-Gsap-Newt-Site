@@ -181,10 +181,10 @@
                     <img :src="article.coverImage.src" :width="400" :height="300"
                       :alt="`Cover image for ${article.title}`" />
                     <span>
-                      <time class="date">
+                      <div class="date">
                         <i class="material-icons">schedule</i>
                         {{ formatDate(article.date) }}
-                      </time>
+                      </div>
                       <h3>{{ article.title }}</h3>
                     </span>
                   </NuxtLink>

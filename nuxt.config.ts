@@ -36,7 +36,7 @@ export default defineNuxtConfig({
     }
   },
   plugins: [
-    { src: '@/plugins/aos.d.ts', ssr: false, mode: "client" }
+    { src: '@/plugins/aos.ts', ssr: false, mode: "client" }
   ],
   typescript: {
     typeCheck: true

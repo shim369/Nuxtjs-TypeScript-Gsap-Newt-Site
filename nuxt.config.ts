@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   build: {
     transpile: ['gsap']
   },
+  modules: [
+    'nuxt-aos'
+  ],
   app: {
     head: {
       htmlAttrs: {
@@ -35,9 +38,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  plugins: [
-    { src: '@/plugins/aos.ts', ssr: false, mode: "client" }
-  ],
   typescript: {
     typeCheck: true
   },

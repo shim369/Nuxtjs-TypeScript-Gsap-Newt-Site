@@ -5,7 +5,8 @@ export default defineNuxtConfig({
     transpile: ['gsap']
   },
   modules: [
-    'nuxt-aos'
+    'nuxt-aos',
+    '@nuxtjs/google-fonts'
   ],
   app: {
     head: {
@@ -18,12 +19,14 @@ export default defineNuxtConfig({
           href: "https://fonts.googleapis.com",
         },
         {
-          rel: 'stylesheet',
+          rel: 'preload',
+          as: 'font',
           href: 'https://fonts.googleapis.com/icon?family=Material+Icons&display=swap',
           crossorigin: "",
         },
         {
-          rel: 'stylesheet',
+          rel: 'preload',
+          as: 'font',
           href: 'https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;900&family=Nanum+Myeongjo:wght@700&display=swap',
           crossorigin: "",
         }

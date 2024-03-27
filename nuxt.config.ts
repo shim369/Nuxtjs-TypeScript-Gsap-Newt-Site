@@ -8,6 +8,12 @@ export default defineNuxtConfig({
     'nuxt-aos',
     '@nuxtjs/google-fonts'
   ],
+  googleFonts: {
+    families: {
+      Lato: [300, 900],
+      NanumMyeongjo: [700],
+    },
+  },
   app: {
     head: {
       htmlAttrs: {
@@ -22,12 +28,6 @@ export default defineNuxtConfig({
           rel: 'preload',
           as: 'font',
           href: 'https://fonts.googleapis.com/icon?family=Material+Icons&display=swap',
-          crossorigin: "",
-        },
-        {
-          rel: 'preload',
-          as: 'font',
-          href: 'https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;900&family=Nanum+Myeongjo:wght@700&display=swap',
           crossorigin: "",
         }
       ]

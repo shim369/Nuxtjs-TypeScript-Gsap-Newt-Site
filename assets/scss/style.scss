@@ -439,6 +439,8 @@ section {
 	}
 
 	h2 {
+		position: relative;
+		z-index: 1;
 		color: var(--white-color);
 		font-size: 4rem;
 		font-family: 'Nanum Myeongjo', serif;

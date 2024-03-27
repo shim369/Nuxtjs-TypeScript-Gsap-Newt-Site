@@ -26,7 +26,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'preload',
-          as: 'font',
+          as: 'style',
           href: 'https://fonts.googleapis.com/icon?family=Material+Icons&display=swap',
           crossorigin: "",
         }
